@@ -1,0 +1,2 @@
+login anyUser
+> credit_amount> $1000.00
