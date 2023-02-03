@@ -1,0 +1,7 @@
+login
+non-standardbuyaccount
+non-standardbuyaccountpassword
+advertise
+itemname2
+15.00
+30

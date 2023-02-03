@@ -1,0 +1,5 @@
+login
+standardbuyaccount
+standardbuyaccountpassword
+advertise
+logout

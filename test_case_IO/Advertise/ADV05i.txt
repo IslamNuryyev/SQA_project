@@ -1,0 +1,11 @@
+login
+non-standardbuyaccount
+non-standardbuyaccountpassword
+advertise
+itemnameisover12characters
+itemname5
+1000.00
+12.23
+120
+90
+logout
