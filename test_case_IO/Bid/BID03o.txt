@@ -1,0 +1,4 @@
+enter username
+enter password
+transaction not accepted. Must be non-standardsellaccount
+session terminated

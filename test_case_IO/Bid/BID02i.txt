@@ -1,0 +1,7 @@
+login
+non-standardsellaccount
+non-standardsellaccountpassword
+bid
+itemname2 non-standardbuyaccount
+10
+logout
