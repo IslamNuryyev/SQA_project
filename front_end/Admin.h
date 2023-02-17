@@ -47,9 +47,4 @@ public:
     }
 };
 
-// int main(int argc, char const *argv[])
-// {
-//     Admin admin;
-    
-//     return 0;
-// }
+
