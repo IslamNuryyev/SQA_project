@@ -1,6 +1,8 @@
 #include <iostream>
 #include <string>
 #include <fstream>
+#include "AddCredit.h"
+#include "Bidding.h"
 
 using namespace std;
 
@@ -33,10 +35,17 @@ void checkCurrentUserFile() {
 // string userInput;
 int main()
 {
-    // cout << "Welcome to the Auction App" << endl;
+    // User newuser;
+    // newuser.setUserName("islam");
+    // newuser.setUserType("FS");
+
+    // Bidding newBid;
+    // newBid.bid(newuser);
+
     startupScreen();
     
     cout << "Enter command: ";
+
 
     // transaction type input
     string transaction;
@@ -64,6 +73,10 @@ int main()
         cin >> username;
         file.close();
 
+        // User newuser;
+        // newuser.setUserName(username);
+        // newuser.setUserType("FS");
+
 
         // reads in the available items file
         ifstream file2("tickets.txt");
@@ -82,6 +95,17 @@ int main()
             exit(0);
         }
 
+        if ("addcredit" == code)
+        {
+            AddCredit add_credit;
+            add_credit.add_Credit(username);
+        }
+        if ("bid" == code)
+        {
+            Bidding newBid;
+            newBid.bid(username);
+        }
+
     } else {
         
     }
@@ -90,4 +114,3 @@ int main()
 void createAccount() {
     
 }
-
