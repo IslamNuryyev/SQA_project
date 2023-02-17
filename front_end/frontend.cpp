@@ -35,12 +35,6 @@ void checkCurrentUserFile() {
 // string userInput;
 int main()
 {
-    // User newuser;
-    // newuser.setUserName("islam");
-    // newuser.setUserType("FS");
-
-    // Bidding newBid;
-    // newBid.bid(newuser);
 
     startupScreen();
     
@@ -73,9 +67,6 @@ int main()
         cin >> username;
         file.close();
 
-        // User newuser;
-        // newuser.setUserName(username);
-        // newuser.setUserType("FS");
 
 
         // reads in the available items file
