@@ -1,23 +1,22 @@
 
 # TEST_FILES=../test_case_IO/inputs/*.txt;
-TEST_FILES=../test_case_IO/testingfew/*.txt;
-TEST_LOC=./outputs/actual;
+Input_Files=../test_case_IO/testingfew/*.txt;
+TestOutputLocation=./outputs/actual;
 
-#pre-condition files
-CURRENT_USERS=./user_account.txt
-ITEM_TICKET=./tickets.txt
+UserAccount=./user_account.txt
+availableItems=./tickets.txt
 
 
 	
-#Iterate through all of the files specified in the 'FILES' variable
-for file in $TEST_FILES 
+#Iterate through all of the files in Input_Files location
+for file in $Input_Files 
 do 
 	#Set the filename of the current test to be used for output
 	filename=$(basename $file);
 	testname=${filename%%.*};
 	
-	#Run frontend
-	./FrontEndV2 $CURRENT_USERS $ITEM_TICKET < $file  > $TEST_LOC/$testname'o'.txt
+	# executing frontend
+	./FrontEndV2 $UserAccount $availableItems < $file  > $TestOutputLocation/$testname'o'.txt
 done
 
 
