@@ -51,6 +51,24 @@ public:
 
     void logOut() {
     }
+
+//     void createAccount() {
+//         ofstream outfile("user_account.txt", ios::out | ios::app);
+//         string newUserName;
+//         string newUserType;
+//         int newUserCredit;
+
+//         cout << "Enter new user username: ";
+//         cin >> userName;
+//         cout << "Enter new user user type: ";
+//         cin >> userType;
+//         cout << "Enter new user initial credit: ";
+//         cin >> userCredit;
+//         outfile <<userName<<"_"<<userType<<"_"<<userCredit  << std::endl;
+    
+//         outfile.close();
+    
+// }
 };
 
 // int main() {

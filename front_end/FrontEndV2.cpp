@@ -1,6 +1,11 @@
 #include <iostream>
 #include <string>
 #include <fstream>
+#include "AddCredit.h"
+#include "Bidding.h"
+// #include "User.h"
+#include "Admin.h"
+#include "Refund.h"
 
 using namespace std;
 
@@ -13,6 +18,7 @@ void login (bool isLoggedIn) {
         cin >> username;
     }
 }
+
 
 void startupScreen() {
     cout << "***************************************************************" << endl;
@@ -36,8 +42,48 @@ void mainMenu() {
 
 }
 
+
+string checkUser(string user_name) {
+    ifstream file("user_account.txt");
+    string line;
+    string type = "";
+    char delimiter = '_';
+    bool exist = false;
+    while (getline(file, line)) {
+        string usr_name = line.substr(0, line.find(delimiter));
+        string usr_type = line.substr(line.find(delimiter)+1, 2);
+        if (user_name ==  usr_name) {
+                exist = true;
+                if (usr_type == "FS" ) {
+                    type= "FS";
+                    break;
+                    }
+                else if (usr_type == "BS") {
+                    type= "BS";
+                    break;
+
+                }
+                else if (usr_type == "SS") {
+                    type= "SS";
+                    break;
+                }
+                else if (usr_type == "AA"){
+                    type = "AA";
+                    break;
+                }
+                // else {
+                //     cout << "User does not exist" << endl;
+                //      }
+            }
+        }
+    file.close();
+        //if (usr_name.size() =)
+    return type;
+  }
+
+
 // string userInput;
-int main()
+int main( int argc, char** argv)
 {
     // cout << "Welcome to the Auction App" << endl;
     startupScreen();
@@ -52,7 +98,7 @@ int main()
 
         //***************************************************************
         // transaction type input
-        cout << "Enter command: ";
+        cout << "\nEnter command: \n";
         // Main menu command
         cin >> transaction;
         
@@ -88,14 +134,57 @@ int main()
         // login transaction code
         case 1:
             // asks for the username
-            cout << "Enter username: ";
+            cout << "Enter username: \n";
             cin >> username;
             isLoggedIn = true;
+            if (checkUser(username) == "AA") {
+                cout << "Select from below options" << endl;
+                cout << "        create         " << endl;
+                cout << "        delete         " << endl;
+                cout << "        advertise         " << endl;
+                cout << "          bid         " << endl;
+                cout << "         refund         " << endl;
+                cout << "        addcredit         " << endl;
+                cout << "          logout         " << endl;
+                cout << "        \n         " << endl;
+
+            }
+            else if (checkUser(username) == "FS") 
+            {
+                cout << "Select from below options" << endl;
+                cout << "          sell         " << endl;
+                cout << "          bid         " << endl;
+                cout << "        advertise         " << endl;
+                cout << "        addcredit         " << endl;
+                cout << "          logout         " << endl;
+                cout << "        \n         " << endl;
+            }
+            else if (checkUser(username) == "SS") 
+            {
+                cout << "Select from below options" << endl;
+                cout << "        advertise         " << endl;
+                cout << "        addcredit         " << endl;
+                cout << "          logout         " << endl;
+                cout << "        \n         " << endl;
+            }
+            else if (checkUser(username) == "BS") 
+            {
+                cout << "Select from below options" << endl;
+                cout << "          bid         " << endl;
+                cout << "        addcredit         " << endl;
+                cout << "          logout         " << endl;
+                cout << "        \n         " << endl;
+            }
+            else {
+                 cout << "User does not exist" << endl;
+            }
+
             break;
         // logout transaction code
         case 2:
             if (isLoggedIn == true) {
                 cout << "Logout successful!" << endl;
+                break;
             } else {
                 cout << "Invalid logout" << endl;
                 // since this is an invalid logout, it will not proceed
@@ -108,13 +197,50 @@ int main()
                 cout << "Invalid command, you are not logged in" << endl;
                 break;
             }
+            else {
+                if (checkUser(username) == "AA") {
+                    Admin addNewUser;
 
+                    string newUserName;
+                    string newUserType;
+                    int newUserCredit;
+
+                    cout << "Enter new user username: " << endl;
+                    cin >> newUserName;
+                    cout << "Enter new user user type: " << endl;
+                    cin >> newUserType;
+                    cout << "Enter new user initial credit: " << endl;
+                    cin >> newUserCredit;
+
+                    addNewUser.createUser(newUserName,newUserType,newUserCredit);
+                    break;
+                }
+                else {
+                cout << "You do not have permission to Create a User !! " << endl;
+                cout << "Select appropriate option from above " << endl;
+                break;
+            }
             break;
+            }
 
         // delete transaction code
         case 4:
-
+        {
+            if (checkUser(username) == "AA") {
+                Admin UserToDelete;
+                string del_username;
+                cout << "Enter username to be deleted: ";
+                cin >> del_username;
+                UserToDelete.deleteUser(del_username,checkUser(del_username));
+                break;
+            }
+            else {
+                cout << "You do not have permission to Delete a User !! " << endl;
+                cout << "Select appropriate option from above " << endl;
+                break;
+            }
             break;
+        }
 
 
         // advertise transaction code
@@ -124,67 +250,45 @@ int main()
 
         // bid transaction code
         case 6:
-
+            if (checkUser(username) == "AA" || checkUser(username) == "FS" || checkUser(username) == "BS") {
+                Bidding newBid;
+                newBid.bid(username);
+                break;
+            }
+            else {
+                cout << "Seller acounts cannot bid " << endl;;
+                cout << "Select approprate option from above " << endl;
+                break;
+            }
             break;
 
         // refund transaction code
         case 7:
-
+            if (checkUser(username) == "AA") {
+                Refund newRefund;
+                newRefund.refund();
+                break;
+            }
+            else {
+                cout << "You do not have permission for Refund !! " << endl;
+                cout << "Select appropriate option from above " << endl;
+            }
             break;
 
         // addcredit transaction code
         case 8:
+            AddCredit add_credit;
+            add_credit.add_Credit(username);
 
             break;
         }
     } while (transactionCode != 2);
-    
-    /*
-    if (transaction == "login")
-    {
-
-        // reads in the currrent user accounts file
-        ifstream file("user_account.txt");
-        string line;
-        
-        // login boolean 
-        bool isLoggedIn = false;
-
-        while (getline(file, line))
-        {   
-            cout << "user = " << line << endl;
-        }
-
-        // asks for the username
-        cout << "Enter username: ";
-        string username;
-        cin >> username;
-        file.close();
-
-
-        // reads in the available items file
-        ifstream file2("tickets.txt");
-        while (getline(file2, line))
-        {   
-            cout << "-- Here are the available items --" << endl;
-            cout << "item = " << line << endl;
-        }
-
-        cout << "Enter a transaction code: ";
-        string code;
-        cin >> code;
-        
-        if ("logout" == code)
-        {
-            exit(0);
-        }
-
-    } else {
-        
-    }
-    */
 }
 
-void createAccount() {
-    
-}
+// islam_AA_999999
+// islam_FS_100002
+// owais_FS_100005
+// islam4_SS_99504
+// islam3_BS_100503
+// bhargav_SS_100505
+
