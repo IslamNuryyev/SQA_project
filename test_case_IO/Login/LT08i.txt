@@ -1,2 +1,0 @@
-username=adminuser22
-password=adminpassword

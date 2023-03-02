@@ -1,0 +1,4 @@
+enter username
+enter password
+successfully logged in
+transaction not accepted, must be non-standard buy account

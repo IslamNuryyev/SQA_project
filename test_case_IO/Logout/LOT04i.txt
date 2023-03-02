@@ -1,3 +1,0 @@
-create username22
-delete username22
-refund username22

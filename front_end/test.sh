@@ -5,6 +5,7 @@ TestOutputLocation=./outputs/actual;
 
 UserAccount=./user_account.txt
 availableItems=./tickets.txt
+TransactionFile=./daily_transaction_file.txt
 
 
 	
@@ -16,7 +17,7 @@ do
 	testname=${filename%%.*};
 	
 	# executing frontend
-	./FrontEndV2 $UserAccount $availableItems < $file  > $TestOutputLocation/$testname'o'.txt
+	./FrontEndV2 $UserAccount $availableItems $TransactionFile < $file  > $TestOutputLocation/$testname'o'.txt
 done
 
 

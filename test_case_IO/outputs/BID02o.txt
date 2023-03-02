@@ -1,0 +1,8 @@
+enter username
+enter password
+enter item name and seller's username
+current highest bid is 0. Enter your bid
+current highest bid is 10.
+saving to daily transaction file
+transaction accepted
+session terminated

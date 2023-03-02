@@ -1,2 +1,0 @@
-> Username is too long
-> Username is already taken

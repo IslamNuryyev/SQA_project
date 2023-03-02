@@ -1,3 +1,0 @@
-Login Admin_user
-> Enter Seller UserName user123
-> Enter Buyer UserName user456

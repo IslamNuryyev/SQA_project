@@ -1,4 +1,0 @@
-username = name22
-password = password
-create newuser 
-delete name22

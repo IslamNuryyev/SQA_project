@@ -1,5 +1,0 @@
-login
-standardsellaccount
-standardsellaccountpassword
-bid
-logout

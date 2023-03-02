@@ -1,0 +1,7 @@
+login
+islam
+create
+user01
+SS
+1234543
+logout

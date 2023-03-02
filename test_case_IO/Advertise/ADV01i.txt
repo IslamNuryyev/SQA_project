@@ -1,4 +1,0 @@
-advertise
-itemnameisover12characters
-1000.00
-120

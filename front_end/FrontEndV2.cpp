@@ -2,10 +2,11 @@
 #include <string>
 #include <fstream>
 #include "AddCredit.h"
-#include "Bidding.h"
-// #include "User.h"
-#include "Admin.h"
 #include "Refund.h"
+#include "Delete.h"
+#include "Bidding.h"
+#include "Admin.h"
+// #include "Refund.h"
 
 using namespace std;
 
@@ -43,7 +44,7 @@ void mainMenu() {
 }
 
 
-string checkUser(string user_name) {
+string checkUserMain(string user_name) {
     ifstream file("user_account.txt");
     string line;
     string type = "";
@@ -137,7 +138,7 @@ int main( int argc, char** argv)
             cout << "Enter username: \n";
             cin >> username;
             isLoggedIn = true;
-            if (checkUser(username) == "AA") {
+            if (checkUserMain(username) == "AA") {
                 cout << "Select from below options" << endl;
                 cout << "        create         " << endl;
                 cout << "        delete         " << endl;
@@ -149,7 +150,7 @@ int main( int argc, char** argv)
                 cout << "        \n         " << endl;
 
             }
-            else if (checkUser(username) == "FS") 
+            else if (checkUserMain(username) == "FS") 
             {
                 cout << "Select from below options" << endl;
                 cout << "          sell         " << endl;
@@ -159,7 +160,7 @@ int main( int argc, char** argv)
                 cout << "          logout         " << endl;
                 cout << "        \n         " << endl;
             }
-            else if (checkUser(username) == "SS") 
+            else if (checkUserMain(username) == "SS") 
             {
                 cout << "Select from below options" << endl;
                 cout << "        advertise         " << endl;
@@ -167,7 +168,7 @@ int main( int argc, char** argv)
                 cout << "          logout         " << endl;
                 cout << "        \n         " << endl;
             }
-            else if (checkUser(username) == "BS") 
+            else if (checkUserMain(username) == "BS") 
             {
                 cout << "Select from below options" << endl;
                 cout << "          bid         " << endl;
@@ -198,7 +199,7 @@ int main( int argc, char** argv)
                 break;
             }
             else {
-                if (checkUser(username) == "AA") {
+                if (checkUserMain(username) == "AA") {
                     Admin addNewUser;
 
                     string newUserName;
@@ -212,7 +213,7 @@ int main( int argc, char** argv)
                     cout << "Enter new user initial credit: " << endl;
                     cin >> newUserCredit;
 
-                    addNewUser.createUser(newUserName,newUserType,newUserCredit);
+                    addNewUser.createUser(newUserName,newUserType,newUserCredit,argv[1], argv[3] );
                     break;
                 }
                 else {
@@ -226,12 +227,12 @@ int main( int argc, char** argv)
         // delete transaction code
         case 4:
         {
-            if (checkUser(username) == "AA") {
-                Admin UserToDelete;
+            if (checkUserMain(username) == "AA") {
+                Delete UserToDelete;
                 string del_username;
                 cout << "Enter username to be deleted: ";
                 cin >> del_username;
-                UserToDelete.deleteUser(del_username,checkUser(del_username));
+                UserToDelete.deleteUser(del_username,checkUserMain(del_username), argv[1], argv[3]);
                 break;
             }
             else {
@@ -250,9 +251,9 @@ int main( int argc, char** argv)
 
         // bid transaction code
         case 6:
-            if (checkUser(username) == "AA" || checkUser(username) == "FS" || checkUser(username) == "BS") {
+            if (checkUserMain(username) == "AA" || checkUserMain(username) == "FS" || checkUserMain(username) == "BS") {
                 Bidding newBid;
-                newBid.bid(username);
+                newBid.bid(username,argv[1], argv[2]);
                 break;
             }
             else {
@@ -264,9 +265,9 @@ int main( int argc, char** argv)
 
         // refund transaction code
         case 7:
-            if (checkUser(username) == "AA") {
+            if (checkUserMain(username) == "AA") {
                 Refund newRefund;
-                newRefund.refund();
+                newRefund.refund(argv[1], argv[3]);
                 break;
             }
             else {
@@ -277,18 +278,20 @@ int main( int argc, char** argv)
 
         // addcredit transaction code
         case 8:
-            AddCredit add_credit;
-            add_credit.add_Credit(username);
+            AddCredit newCredit;
+            newCredit.add_Credit(username,argv[1], argv[3]);
 
             break;
         }
     } while (transactionCode != 2);
 }
 
+
 // islam_AA_999999
 // islam_FS_100002
-// owais_FS_100005
-// islam4_SS_99504
-// islam3_BS_100503
-// bhargav_SS_100505
-
+// bhargav24_AA_234242
+// baparekh3_AA_1234
+// owais_FS_121237
+// islam4_SS_97504
+// islam3_BS_102503
+// bhargav_SS_412818

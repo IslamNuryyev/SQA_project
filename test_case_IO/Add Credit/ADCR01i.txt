@@ -1,3 +1,0 @@
-login admin_user
->credit_to_username
->amount_to_user

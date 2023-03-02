@@ -1,2 +1,0 @@
-username=name22
-password=password
