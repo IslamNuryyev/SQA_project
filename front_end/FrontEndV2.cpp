@@ -8,6 +8,9 @@
 #include "Admin.h"
 // #include "Refund.h"
 
+#include "Advertise.h"
+
+
 using namespace std;
 
 void login (bool isLoggedIn) {
@@ -58,7 +61,7 @@ string checkUserMain(string user_name) {
                 if (usr_type == "FS" ) {
                     type= "FS";
                     break;
-                    }
+                }
                 else if (usr_type == "BS") {
                     type= "BS";
                     break;
@@ -246,6 +249,14 @@ int main( int argc, char** argv)
 
         // advertise transaction code
         case 5:
+            if (checkUserMain(username) == "AA" || checkUserMain(username) == "FS" || checkUserMain(username) == "SS") {
+                Advertise newItem;
+                newitem.createItem();
+            }
+
+            else {
+                cout << "Buy standard accounts cannot advertise items" << endl;
+            }
 
             break;
 
@@ -285,7 +296,6 @@ int main( int argc, char** argv)
         }
     } while (transactionCode != 2);
 }
-
 
 // islam_AA_999999
 // islam_FS_100002

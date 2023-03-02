@@ -4,7 +4,7 @@
 #include "User.h"
 using namespace std;
 
-class Refund : public User{
+class Refund : public User {
 
 public:
 

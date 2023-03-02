@@ -46,6 +46,7 @@ bool Refund ::takeoutfromSeller (string seller_usr, int minus_amount, string use
         return true;
 
         }
+
         else {
             inFile4.close();
             temp_File.close();
@@ -56,9 +57,7 @@ bool Refund ::takeoutfromSeller (string seller_usr, int minus_amount, string use
 
         }
 
-
         // cout << "money after minus " << newSellerCredit << endl;
-        
     }
 
 bool Refund :: addToBuyersAccount (string Buyer_usr, int plus_amount, string user_file) {
@@ -117,45 +116,43 @@ bool Refund :: addToBuyersAccount (string Buyer_usr, int plus_amount, string use
     }
 
 void Refund :: refund(string user_file, string transactionFile) {  // locating line to be deleted of a user
-        string buy_userName;
-        string sell_userName;
-        int refund_amount;
-        cout << "Enter BUYER'S username: ";
-        cin >> buy_userName;
+    string buy_userName;
+    string sell_userName;
+    int refund_amount;
+    cout << "Enter BUYER'S username: ";
+    cin >> buy_userName;
 
-        cout << "Enter SELLER'S username: ";
-        cin >> sell_userName;
+    cout << "Enter SELLER'S username: ";
+    cin >> sell_userName;
 
-        cout << "Enter amount to be refunded: ";
-        cin >> refund_amount;
+    cout << "Enter amount to be refunded: ";
+    cin >> refund_amount;
 
-        bool success1 = false;
-        bool success2 = false;
+    bool success1 = false;
+    bool success2 = false;
 
-        //takeoutfromSeller (sell_userName,refund_amount);
-        //addToBuyersAccount (buy_userName, refund_amount);
+    //takeoutfromSeller (sell_userName,refund_amount);
+    //addToBuyersAccount (buy_userName, refund_amount);
 
-        if (User::checkUser(sell_userName,user_file) == "FS" || User::checkUser(sell_userName,user_file) == "SS" || User::checkUser(sell_userName,user_file) == "BS" ){
-            success1 = takeoutfromSeller (sell_userName,refund_amount,user_file);
-            
-        }
-        else {
-            cout << "Seller account does not exist" << endl;
-        }
+    if (User::checkUser(sell_userName,user_file) == "FS" || User::checkUser(sell_userName,user_file) == "SS" || User::checkUser(sell_userName,user_file) == "BS" ){
+        success1 = takeoutfromSeller (sell_userName,refund_amount,user_file);
+        
+    }
+    else {
+        cout << "Seller account does not exist" << endl;
+    }
 
-        if (User::checkUser(buy_userName,user_file) == "FS" || User::checkUser(buy_userName,user_file) == "SS" || User::checkUser(buy_userName,user_file) == "BS" ){
-            success2 = addToBuyersAccount (buy_userName,refund_amount,user_file);
-        }
-        else {
-            cout << "Buyer account does not exist" << endl;
-        }
-
-
-        if (success1 == true && success2 == true ) {
-            ofstream Create_Transaction(transactionFile,ios::out | ios::app);
-            Create_Transaction <<  "05" << "_" << buy_userName << "_" << sell_userName << "_" << refund_amount << endl;
-            Create_Transaction.close();
-        }
+    if (User::checkUser(buy_userName,user_file) == "FS" || User::checkUser(buy_userName,user_file) == "SS" || User::checkUser(buy_userName,user_file) == "BS" ){
+        success2 = addToBuyersAccount (buy_userName,refund_amount,user_file);
+    }
+    else {
+        cout << "Buyer account does not exist" << endl;
+    }
 
 
-        }
+    if (success1 == true && success2 == true ) {
+        ofstream Create_Transaction(transactionFile,ios::out | ios::app);
+        Create_Transaction <<  "05" << "_" << buy_userName << "_" << sell_userName << "_" << refund_amount << endl;
+        Create_Transaction.close();
+    }
+}
