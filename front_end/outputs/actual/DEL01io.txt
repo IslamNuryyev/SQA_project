@@ -1,0 +1,29 @@
+***************************************************************
+Welcome to the Auction App
+ -- Created by     -- 
+ -- Luis Octavo    -- 
+ -- Owais Najmi    -- 
+ -- Islam Nuryyev  -- 
+ -- Bhargav Parekh -- 
+***************************************************************
+
+Enter command: 
+Enter username: 
+Select from below options
+        create         
+        delete         
+        advertise         
+          bid         
+         refund         
+        addcredit         
+          logout         
+        
+         
+
+Enter command: 
+Enter username to be deleted: line to delete number is : 6
+
+User deleted succesfully
+
+Enter command: 
+Logout successful!

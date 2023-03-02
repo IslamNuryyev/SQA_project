@@ -1,0 +1,26 @@
+***************************************************************
+Welcome to the Auction App
+ -- Created by     -- 
+ -- Luis Octavo    -- 
+ -- Owais Najmi    -- 
+ -- Islam Nuryyev  -- 
+ -- Bhargav Parekh -- 
+***************************************************************
+
+Enter command: 
+Enter username: 
+Select from below options
+        advertise         
+        addcredit         
+          logout         
+        
+         
+
+Enter command: 
+How much credit you want to add: 
+
+Adding amount to account updated succesfully
+901672 added for bhargav
+
+Enter command: 
+Logout successful!
