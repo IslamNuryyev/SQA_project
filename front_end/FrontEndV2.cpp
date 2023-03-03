@@ -7,7 +7,6 @@
 #include "Bidding.h"
 #include "Admin.h"
 // #include "Refund.h"
-
 #include "Advertise.h"
 
 
@@ -25,14 +24,14 @@ void login (bool isLoggedIn) {
 
 
 void startupScreen() {
-    cout << "***************************************************************" << endl;
+    cout << "***************************************************************\n" << endl;
     cout << "Welcome to the Auction App" << endl;
     cout << " -- Created by     -- " << endl;
     cout << " -- Luis Octavo    -- " << endl;
     cout << " -- Owais Najmi    -- " << endl;
     cout << " -- Islam Nuryyev  -- " << endl;
     cout << " -- Bhargav Parekh -- " << endl;
-    cout << "***************************************************************" << endl;
+    cout << "\n***************************************************************" << endl;
 }
 
 // This is where the check for the current user accounts file.
@@ -41,11 +40,6 @@ void checkCurrentUserFile() {
 
 
 }
-
-void mainMenu() {
-
-}
-
 
 string checkUserMain(string user_name) {
     ifstream file("user_account.txt");
@@ -83,7 +77,10 @@ string checkUserMain(string user_name) {
     file.close();
         //if (usr_name.size() =)
     return type;
-  }
+}
+
+// Text redundancy
+
 
 
 // string userInput;
@@ -108,7 +105,7 @@ int main( int argc, char** argv)
         
         // transaction type classification
         // add text redundancy later
-        if (transaction == "login") {
+        if (transaction == "login" || transaction == "LOGIN") {
             transactionCode = 1;
         } 
         else if (transaction == "logout") {
@@ -138,49 +135,48 @@ int main( int argc, char** argv)
         // login transaction code
         case 1:
             // asks for the username
-            cout << "Enter username: \n";
+            cout << "Enter username: ";
             cin >> username;
             isLoggedIn = true;
             if (checkUserMain(username) == "AA") {
-                cout << "Select from below options" << endl;
-                cout << "        create         " << endl;
-                cout << "        delete         " << endl;
-                cout << "        advertise         " << endl;
-                cout << "          bid         " << endl;
-                cout << "         refund         " << endl;
-                cout << "        addcredit         " << endl;
-                cout << "          logout         " << endl;
-                cout << "        \n         " << endl;
+                cout << "\n- Select from below options - " << endl;
+                cout << "- create" << endl;
+                cout << "- delete" << endl;
+                cout << "- advertise" << endl;
+                cout << "- bid" << endl;
+                cout << "- refund" << endl;
+                cout << "- addcredit" << endl;
+                cout << "- logout" << endl;
 
             }
             else if (checkUserMain(username) == "FS") 
             {
-                cout << "Select from below options" << endl;
-                cout << "          sell         " << endl;
-                cout << "          bid         " << endl;
-                cout << "        advertise         " << endl;
-                cout << "        addcredit         " << endl;
-                cout << "          logout         " << endl;
-                cout << "        \n         " << endl;
+                cout << "\n- Select from below options - " << endl;
+                cout << "- sell" << endl;
+                cout << "- bid" << endl;
+                cout << "- advertise" << endl;
+                cout << "- addcredit" << endl;
+                cout << "- logout" << endl;
+        
             }
             else if (checkUserMain(username) == "SS") 
             {
-                cout << "Select from below options" << endl;
-                cout << "        advertise         " << endl;
-                cout << "        addcredit         " << endl;
-                cout << "          logout         " << endl;
-                cout << "        \n         " << endl;
+                cout << "\n- Select from below options - " << endl;
+                cout << "- advertise         " << endl;
+                cout << "- addcredit         " << endl;
+                cout << "- logout         " << endl;
+                
             }
             else if (checkUserMain(username) == "BS") 
             {
-                cout << "Select from below options" << endl;
-                cout << "          bid         " << endl;
-                cout << "        addcredit         " << endl;
-                cout << "          logout         " << endl;
-                cout << "        \n         " << endl;
+                cout << "\n- Select from below options - " << endl;
+                cout << "- bid         " << endl;
+                cout << "- addcredit         " << endl;
+                cout << "- logout         " << endl;
+                
             }
             else {
-                 cout << "User does not exist" << endl;
+                 cout << "\nUser does not exist, please try again" << endl;
             }
 
             break;
