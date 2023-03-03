@@ -7,6 +7,6 @@ using namespace std;
 class Advertise : public User {
 
     public:
-    void createItem();
+    void createItem(string sellerName);
 
-}
+};

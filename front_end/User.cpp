@@ -83,6 +83,7 @@ User::User(string name, string type, float credit) {
         file.close();
         return type;
     }
+    
     int User::checkCredit(string user_name, string user_file) {
         ifstream file3(user_file);
 

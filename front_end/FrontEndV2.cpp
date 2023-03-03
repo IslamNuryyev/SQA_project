@@ -102,7 +102,7 @@ int main( int argc, char** argv)
 
         //***************************************************************
         // transaction type input
-        cout << "\nEnter command: \n";
+        cout << "\nEnter command: ";
         // Main menu command
         cin >> transaction;
         
@@ -251,7 +251,7 @@ int main( int argc, char** argv)
         case 5:
             if (checkUserMain(username) == "AA" || checkUserMain(username) == "FS" || checkUserMain(username) == "SS") {
                 Advertise newItem;
-                newitem.createItem();
+                newItem.createItem(username);
             }
 
             else {
