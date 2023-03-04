@@ -45,7 +45,7 @@ int AddCredit::add_Credit(string user_name, string user_file, string transaction
             long admin_total_credit = credit_for_user  + creditONfile;
 
             if (admin_total_credit > 999999999) {
-                cout << "Admin, cannot exceed credit limit of 999999999 "<< endl;
+                cout << "cannot exceed credit limit of 999999999 "<< endl;
             }
             else {
                 User::savetoFile(for_user,admin_total_credit,creditOnFile,user_file,transactionFile);
