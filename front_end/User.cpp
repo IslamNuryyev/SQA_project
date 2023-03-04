@@ -74,7 +74,6 @@ User::User(string name, string type, float credit) {
         }
     }
     
-
     // void logIn() {
     // }
 
