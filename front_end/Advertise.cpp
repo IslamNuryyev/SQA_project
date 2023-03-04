@@ -13,11 +13,18 @@ int numberOfDays;
 string transactionFile;
 string separator = "_";
 
+
+void itemNamePrompt() {
+    cout << "Enter item name: ";
+    cin >> itemName;
+
+    // if itemName
+}
+
 void Advertise :: createItem(string sellerName) {
     cout << "Testing" << endl;
 
-    cout << "Enter item name: ";
-    cin >> itemName;
+    itemNamePrompt();
 
     cout << "Enter starting bid: ";
     cin >> minimumBid;
@@ -32,9 +39,14 @@ void Advertise :: createItem(string sellerName) {
     cout << "Days: " << numberOfDays << endl;
     cout << "Seller Name: " << sellerName << endl;
 
-    // write the item into the file here
+    // write the item into the available items file here
     ofstream myfile;
     myfile.open("items.txt", std::ios_base::app);
+    myfile << itemName << separator << sellerName << separator << "None" << separator << numberOfDays << separator << minimumBid << "\n";
+    myfile.close();
+
+    // write in the transaction file here
+    myfile.open("daily_transaction_file.txt", std::ios_base::app);
     myfile << "03" << separator << itemName << separator << sellerName << separator << numberOfDays << separator << minimumBid << "\n";
     myfile.close();
 
