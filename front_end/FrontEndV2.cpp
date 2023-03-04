@@ -251,7 +251,7 @@ int main( int argc, char** argv)
             }
 
             else {
-                cout << "Buy standard accounts cannot advertise items" << endl;
+                cout << "Buy standard accounts cannot post items" << endl;
             }
 
             break;
