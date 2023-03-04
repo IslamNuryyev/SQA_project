@@ -32,13 +32,21 @@ User::User(string name, string type, float credit) {
     }
 
     void User::setUserName(string name) {
+        if (name.length() > 15) {
+        userName = name.substr(0, 15);
+        } else {
         userName = name;
+        }
     }
     void User::setUserType(string type) {
         userType = type;
     }
     void User::setUserCredit(float credit) {
-        userCredit = credit;
+        if (credit > 999999) {
+            userCredit = 999999; 
+        } else {
+            userCredit = credit;
+        } 
     }
     void User::setIsLoggedIn(bool loggedIn) {
         isLoggedIn = loggedIn;
