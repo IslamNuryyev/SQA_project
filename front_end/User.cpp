@@ -32,10 +32,21 @@ User::User(string name, string type, float credit) {
     }
 
     void User::setUserName(string name) {
+        if (isUserNameTaken(name)) {
+            throw runtime_error("User name already taken.");
+        }
+
+        // removes the old user name and add the new one to the list
+        auto it = find(userNames.begin(), userNames.end(), name);
+        if (it != userNames.end()) {
+            userNames.erase(it);
+        }
+
         if (name.length() > 15) {
         userName = name.substr(0, 15);
+        userNames.push_back(name.substr(0, 15));
         } else {
-        userName = name;
+        userName = name.substr(0, 15);
         }
     }
     void User::setUserType(string type) {
@@ -51,6 +62,18 @@ User::User(string name, string type, float credit) {
     void User::setIsLoggedIn(bool loggedIn) {
         isLoggedIn = loggedIn;
     }
+
+    static vector<string> userNames; // to store all user names
+
+    static bool isUserNameTaken(const string& name) {
+        // check if the given user name is already taken
+        if (name.length() > 15) {
+        return find(userNames.begin(), userNames.end(), name.substr(0, 15)) != userNames.end();
+        } else {
+            return find(userNames.begin(), userNames.end(), name) != userNames.end();
+        }
+    }
+    
 
     // void logIn() {
     // }
