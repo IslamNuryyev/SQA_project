@@ -25,7 +25,7 @@ Credit for which user:
 How much credit you want to add for user bhargav: 
 
 Adding amount to account updated succesfully
-425140 added for bhargav by admin islam
+424140 added for bhargav by admin islam
 
 Enter command: 
 Logout successful!

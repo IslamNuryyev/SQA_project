@@ -6,7 +6,8 @@
 #include "Delete.h"
 #include "Bidding.h"
 #include "Admin.h"
-// #include "Refund.h"
+#include "Advertise.h"
+#include <sstream>
 
 using namespace std;
 
@@ -43,47 +44,64 @@ void mainMenu() {
 
 }
 
-
 string checkUserMain(string user_name) {
     ifstream file("user_account.txt");
     string line;
-    string type = "";
-    char delimiter = '_';
-    bool exist = false;
-    while (getline(file, line)) {
-        string usr_name = line.substr(0, line.find(delimiter));
-        string usr_type = line.substr(line.find(delimiter)+1, 2);
-        if (user_name ==  usr_name) {
-                exist = true;
-                if (usr_type == "FS" ) {
-                    type= "FS";
-                    break;
-                    }
-                else if (usr_type == "BS") {
-                    type= "BS";
-                    break;
+    string Returntype;
 
-                }
-                else if (usr_type == "SS") {
-                    type= "SS";
-                    break;
-                }
-                else if (usr_type == "AA"){
-                    type = "AA";
-                    break;
-                }
-                // else {
-                //     cout << "User does not exist" << endl;
-                //      }
+    if (file.is_open())
+    {
+        while (std::getline(file, line))
+        {
+            // Find the first space character
+                // std::stringstream US(line);
+                // std::string usr;
+                // US >> usr;
+
+
+                // // getting user type from a line
+                // std::stringstream ss(line);
+                // std::string usrType;
+                // // Read the string between the first and second spaces
+                // ss >> usrType;
+                // ss.ignore(std::string::npos, ' ');
+                // ss >> usrType;
+
+                stringstream ss(line);
+                string usr, usrType;
+                ss >> usr >> usrType;
+
+                if (usr ==  user_name) {
+                    if (usrType == "FS" ) {
+                        Returntype ="FS";
+                        break;
+                    }
+                    else if (usrType == "BS" ) {
+                        Returntype ="BS";
+                        break;
+                    }
+                    else if (usrType == "SS" ) {
+                        Returntype ="SS";
+                        break;
+                    }
+                    else if (usrType == "AA" ) {
+                        Returntype ="AA";
+                        break;
+                    }
             }
         }
-    file.close();
-        //if (usr_name.size() =)
-    return type;
+
+        file.close();
+    }
+    else
+    {
+        cerr << "Error opening file." << endl;
+    }
+
+    return Returntype;
   }
+//bhargav         SS 412818
 
-
-// string userInput;
 int main( int argc, char** argv)
 {
     // cout << "Welcome to the Auction App" << endl;
@@ -192,6 +210,7 @@ int main( int argc, char** argv)
                 transactionCode = 1;
                 break;
             }
+
         // create transaction code
         case 3:
             if (isLoggedIn == false) {
@@ -232,7 +251,7 @@ int main( int argc, char** argv)
                 string del_username;
                 cout << "Enter username to be deleted: ";
                 cin >> del_username;
-                UserToDelete.deleteUser(del_username,checkUserMain(del_username), argv[1], argv[3]);
+                UserToDelete.deleteUser(username,del_username,checkUserMain(del_username), argv[1], argv[3]);
                 break;
             }
             else {
@@ -246,6 +265,30 @@ int main( int argc, char** argv)
 
         // advertise transaction code
         case 5:
+            if (checkUserMain(username) != "BS") {
+                string item_name;
+                int min_bid;
+                int num_days;
+                int start_price;
+                int current_bid;
+                string highestBidder = "";
+
+                cout << "Whats the item name" << endl;
+                cin >>item_name;
+                cout << "Minimum bid" << endl;
+                cin >>min_bid;
+                cout << "Number of days" << endl;
+                cin >>num_days;
+                cout << "Starting price" << endl;
+                cin >>start_price;
+                cout << "Current bid" << endl;
+                cin >>current_bid;
+
+                Advertise putAdvertise;
+                putAdvertise.postAdvertise(username,item_name,min_bid,num_days,start_price,current_bid);
+
+
+            }
 
             break;
 
@@ -287,11 +330,21 @@ int main( int argc, char** argv)
 }
 
 
-// islam_AA_999999
-// islam_FS_100002
-// bhargav24_AA_234242
-// baparekh3_AA_1234
-// owais_FS_121237
-// islam4_SS_97504
-// islam3_BS_102503
-// bhargav_SS_412818
+// islam           AA 999999
+// islam           FS 100002
+// baparekh3       AA 1234
+// owais           FS 121237
+// islam4          SS 97504
+// islam3          BS 102503
+// bhargav         SS 412818
+// bhar            AA 000035323
+
+// islam           AA 999999
+// islam           FS 100002
+// baparekh3       AA 1234
+// owais           FS 121237
+// bhar            AA 000035323
+// user01          SS 1.23454e+06
+// user02          AA 00001e+06
+// islam4          SS 000092504
+// islam3          BS 000109503

@@ -21,7 +21,7 @@ Select from below options
          
 
 Enter command: 
-Enter username to be deleted: line to delete number is : -1
+Enter username to be deleted: currentUser: islamuser to delete: not-existing
 
 User does not exist
 

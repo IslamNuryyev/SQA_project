@@ -7,5 +7,5 @@ class Delete : public User {
     private:  
 
     public:
-    int deleteUser(string u_name, string type,string user_file, string transactionFile);
+    int deleteUser(string currentUser,string u_name, string type,string user_file, string transactionFile);
 };

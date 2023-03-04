@@ -2,11 +2,12 @@
 // Created by Bhargav on 2023-03-01.
 //
 
-#include "User.h"
 
 #include <iostream>
+#include <iomanip>
 #include <string>
 #include <fstream>
+#include <sstream>
 #include "User.h"
 
 using namespace std;
@@ -53,52 +54,63 @@ User::User(string name, string type, float credit) {
     string User::checkUser(string user_name, string user_file) {
         ifstream file(user_file);
         string line;
-        string type = "";
-        char delimiter = '_';
+        string Returntype;
 
-        while (getline(file, line)) {
-            string usr_name = line.substr(0, line.find(delimiter));
-            string usr_type = line.substr(line.find(delimiter)+1, 2);
+        if (file.is_open())
+        {
+            while (std::getline(file, line)) {
+                stringstream ss(line);
+                string usr, usrType;
+                ss >> usr >> usrType;
 
-            if (user_name ==  usr_name) {
-                if (usr_type == "FS" ) {
-                    type= "FS";
-                    break;
-                }
-                else if (usr_type == "BS" ) {
-                    type= "BS";
-                    break;
-                }
-                else if (usr_type == "SS" ) {
-                    type = "SS";
-                    break;
-                }
-                else if (usr_type == "AA" ) {
-                    type = "AA";
-                    break;
-                }
+                if (usr ==  user_name) {
+                    if (usrType == "FS" ) {
+                        Returntype ="FS";
+                        break;
+                    }
+                    else if (usrType == "BS" ) {
+                        Returntype ="BS";
+                        break;
+                    }
+                    else if (usrType == "SS" ) {
+                        Returntype ="SS";
+                        break;
+                    }
+                    else if (usrType == "AA" ) {
+                        Returntype ="AA";
+                        break;
+                    }
             }
         }
 
         file.close();
-        return type;
+        }
+        else
+        {
+            cerr << "Error opening file." << endl;
+        }
+
+        return Returntype;
     }
+
     int User::checkCredit(string user_name, string user_file) {
         ifstream file3(user_file);
 
         string line;
         bool flag = false;
         string exist = "";
-        char delimiter = '_';
+        char delimiter = ' ';
         int credit_amount = 0;
 
         while (getline(file3, line)) {
-            string usr_name = line.substr(0, line.find(delimiter));
-            string usr_type = line.substr(line.find(delimiter)+1, 2);
-            string amount_on_file = line.substr(line.find(delimiter)+4, 8);
+            // string usr_name = line.substr(0, line.find(delimiter));
+            // string usr_type = line.substr(line.find(delimiter)+1, 2);
+            // string amount_on_file = line.substr(line.find(delimiter)+4, 8);
 
-            // cout<< "Hello there: " << credit_amount << endl;
-            // exist = "Hello there: ";
+            stringstream ss(line);
+            string usr_name, usr_type, amount_on_file;
+            ss >> usr_name >> usr_type >> amount_on_file;
+
 
             if (user_name ==  usr_name) {
                 credit_amount = stoi(amount_on_file);
@@ -116,7 +128,7 @@ User::User(string name, string type, float credit) {
             return -1;
         }
         int lineNumber = 1;
-        char delimiter = '_';
+        char delimiter = ' ';
         int lineToReplace;
         string line;
         if (!in_File5.is_open()) {
@@ -154,7 +166,8 @@ User::User(string name, string type, float credit) {
             return -1;
         }
 
-        newValue = usr + "_" + checkUser(usr,user_file) + "_" +  to_string(total_credit);
+        string fillUser = usr + string(15 - usr.length(), ' ');
+        //newValue = fillUser + " " + checkUser(usr,user_file) + " " +  to_string(total_credit);
 
         int lineNumber = 1;
         int lineToReplace = locateUserLine(usr, user_file);
@@ -171,8 +184,9 @@ User::User(string name, string type, float credit) {
             // Remove the original input file
             cout << "\nAdding amount to account updated succesfully" << endl;
 
-            temp_File3 <<  newValue << endl;
-            Create_Trans2 <<  "06" << "_" << usr << "_" << checkUser(usr,user_file) << "_" << total_credit << endl;
+            temp_File3 <<  fillUser << " " << checkUser(usr,user_file) << " " << std::setw(9) << std::setfill('0') << to_string(total_credit) << endl;
+            
+            Create_Trans2 <<  "06" << " " << fillUser << " " << checkUser(usr,user_file) << " " << std::setw(9) << std::setfill('0') << to_string(total_credit) << endl;
             Create_Trans2.close();
 
             inFile6.close();

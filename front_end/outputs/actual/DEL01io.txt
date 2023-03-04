@@ -21,7 +21,7 @@ Select from below options
          
 
 Enter command: 
-Enter username to be deleted: line to delete number is : 6
+Enter username to be deleted: currentUser: islamuser to delete: bhargav
 
 User deleted succesfully
 

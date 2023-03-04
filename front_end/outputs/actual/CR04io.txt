@@ -24,7 +24,7 @@ Enter command:
 Enter new user username: 
 Enter new user user type: 
 Enter new user initial credit: 
-Added user02_AA_1e+06 to user_account.txt
+Added user02          AA 1e+06 to user_account.txt
 
 Enter command: 
 Logout successful!

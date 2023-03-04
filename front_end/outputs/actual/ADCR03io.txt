@@ -20,7 +20,7 @@ Enter command:
 How much credit you want to add: 
 
 Adding amount to account updated succesfully
-901672 added for bhargav
+900672 added for bhargav
 
 Enter command: 
 Logout successful!

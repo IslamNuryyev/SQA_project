@@ -9,12 +9,7 @@ Welcome to the Auction App
 
 Enter command: 
 Enter username: 
-Select from below options
-        advertise         
-        addcredit         
-          logout         
-        
-         
+User does not exist
 
 Enter command: 
 You do not have permission for Refund !! 

@@ -1,6 +1,8 @@
 #include <iostream>
+#include <iomanip>
 #include <string>
 #include <fstream>
+#include <sstream>
 #include "Refund.h"
 
 using namespace std;
@@ -16,7 +18,10 @@ bool Refund ::takeoutfromSeller (string seller_usr, int minus_amount, string use
             }
         int currentSellerCredit = User::checkCredit(seller_usr,user_file);
         int newSellerCredit = currentSellerCredit - minus_amount;
-        newValue = seller_usr + "_" + User::checkUser(seller_usr,user_file) + "_" +  to_string(newSellerCredit);
+
+        string fillUser = seller_usr + string(15 - seller_usr.length(), ' ');
+
+        //newValue = seller_usr + "_" + User::checkUser(seller_usr,user_file) + "_" +  to_string(newSellerCredit);
         // cout << "New user value: " << newValue << endl;
 
         int lineNumber = 1;
@@ -35,7 +40,7 @@ bool Refund ::takeoutfromSeller (string seller_usr, int minus_amount, string use
          // Remove the original input file
          cout << "\nSeller account updated succesfully" << endl;
 
-        temp_File <<  newValue << endl;
+        temp_File << fillUser << " " << User::checkUser(seller_usr,user_file) << " " << std::setw(9) << std::setfill('0') << to_string(newSellerCredit) << endl;
 
         inFile4.close();
         temp_File.close();
@@ -71,7 +76,10 @@ bool Refund :: addToBuyersAccount (string Buyer_usr, int plus_amount, string use
             }
         int currentSellerCredit = User::checkCredit(Buyer_usr,user_file);
         int newSellerCredit = currentSellerCredit + plus_amount;
-        newValue = Buyer_usr + "_" + User::checkUser(Buyer_usr,user_file) + "_" +  to_string(newSellerCredit);
+
+        string fillUser = Buyer_usr + string(15 - Buyer_usr.length(), ' ');
+
+       // newValue = fillUser + " " + User::checkUser(Buyer_usr,user_file) + " " +  to_string(newSellerCredit);
         // cout << "New user value: " << newValue << endl;
 
         int lineNumber = 1;
@@ -90,7 +98,7 @@ bool Refund :: addToBuyersAccount (string Buyer_usr, int plus_amount, string use
          // Remove the original input file
          cout << "\nBuyer account updated succesfully" << endl;
 
-        temp_File2 <<  newValue << endl;
+        temp_File2 <<  fillUser << " " << User::checkUser(Buyer_usr,user_file) << " " << std::setw(9) << std::setfill('0') << to_string(newSellerCredit) << endl;
 
         inFile5.close();
         temp_File2.close();
@@ -113,6 +121,16 @@ bool Refund :: addToBuyersAccount (string Buyer_usr, int plus_amount, string use
 
 
         // cout << "money after minus " << newSellerCredit << endl;
+// islam           AA 999999
+// islam           FS 100002
+// baparekh3       AA 1234
+// owais           FS 121237
+// islam4          SS 97504
+// bhar            AA 000035323
+// bhargav         SS 000412840
+// parekhbhrg      FS 000045454
+// islam3          BS 000106940
+
         
     }
 
@@ -135,25 +153,25 @@ void Refund :: refund(string user_file, string transactionFile) {  // locating l
         //takeoutfromSeller (sell_userName,refund_amount);
         //addToBuyersAccount (buy_userName, refund_amount);
 
-        if (User::checkUser(sell_userName,user_file) == "FS" || User::checkUser(sell_userName,user_file) == "SS" || User::checkUser(sell_userName,user_file) == "BS" ){
+        if (User::checkUser(sell_userName,user_file) == "FS" || User::checkUser(sell_userName,user_file) == "SS" ){
             success1 = takeoutfromSeller (sell_userName,refund_amount,user_file);
+            if (User::checkUser(buy_userName,user_file) == "FS" || User::checkUser(buy_userName,user_file) == "BS" ){
+                success2 = addToBuyersAccount (buy_userName,refund_amount,user_file);
+        }
             
         }
         else {
-            cout << "Seller account does not exist" << endl;
-        }
-
-        if (User::checkUser(buy_userName,user_file) == "FS" || User::checkUser(buy_userName,user_file) == "SS" || User::checkUser(buy_userName,user_file) == "BS" ){
-            success2 = addToBuyersAccount (buy_userName,refund_amount,user_file);
-        }
-        else {
-            cout << "Buyer account does not exist" << endl;
+            cout << "One of the account does not exist" << endl;
+            success1 = false; 
+            success2 = false;
         }
 
 
         if (success1 == true && success2 == true ) {
+            string fillBuyUser = buy_userName + string(15 - buy_userName.length(), ' ');
+            string fillSellerUser = sell_userName + string(15 - sell_userName.length(), ' ');
             ofstream Create_Transaction(transactionFile,ios::out | ios::app);
-            Create_Transaction <<  "05" << "_" << buy_userName << "_" << sell_userName << "_" << refund_amount << endl;
+            Create_Transaction <<  "05" << " " << fillBuyUser << " " << fillSellerUser << " " << std::setw(9) << std::setfill('0') << to_string(refund_amount) << endl;
             Create_Transaction.close();
         }
 
