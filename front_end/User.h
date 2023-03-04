@@ -14,6 +14,8 @@ private:
     string userType;
     float userCredit;
     bool isLoggedIn;
+    static vector<string> userNames; // to store all user names
+    static bool isUserNameTaken(const string& name) {}
 public:
     User();
 
