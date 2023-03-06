@@ -27,13 +27,4 @@
 04 newitem             islam           islam           0245.7
 04 newitem             islam           islam           0245.7
 04 newitem             islam           islam           000254
-04 smart_watch         islam           islam           000132
-04 smart_watch         islam           islam           000132
-04 smart_watch         islam           islam           000324
-04 smart_watch         islam           islam           000139
-04 smart_watch         islam           islam           000222
-04 newitem             islam           islam3          000543
-04 newitem             islam           islam3          000345
-04 newitem             islam           islam3          435.700000
-04 newitem             islam           islam           435.700000
-04 smart               islam           islam           3000.000000
+04 smart_watch         islam           islam3          435.000000

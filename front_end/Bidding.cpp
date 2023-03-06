@@ -86,7 +86,7 @@ void Bidding :: bid (string usr_name, string user_files, string avai_item, strin
                     string fillItem = userBidItem + string(19 - userBidItem.length(), ' ');
                     string sellerName =  getSeller (userBidItem,avai_item);
                     string fillSeller = sellerName + string(15 - sellerName.length(), ' '); 
-                    string fillBidder = usr_name + string(15 - usr_name.length(), ' '); s
+                    string fillBidder = usr_name + string(15 - usr_name.length(), ' ');
 
                     cout << " Your bid amount of " << bid_amount << " on " << userBidItem << "is added to file" << endl;
                     string amounttoString = to_string(bid_amount);
