@@ -23,8 +23,7 @@ Select from below options
 Enter command: 
 Enter new user username: 
 Enter new user user type: 
-Enter new user initial credit: 
-Added user02          AA 1e+06 to user_account.txt
+User user02 Succesfully Added to transcation file 
 
 Enter command: 
 Logout successful!

@@ -7,5 +7,5 @@ using namespace std;
 
 class Advertise : public User {
     public:
-    void postAdvertise (string SellerusrName, string item_name,  int numDays, int startPrice);
+    void postAdvertise (string SellerusrName, string item_name,  int numDays, double startPrice);
 };

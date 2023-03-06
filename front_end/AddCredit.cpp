@@ -53,7 +53,6 @@ int AddCredit::add_Credit(string user_name, string user_file, string transaction
             // }
             else {
                 User::savetoFile(for_user,credit_for_user,user_file,transactionFile);
-                cout << admin_total_credit << " added for " << for_user << " by admin " << user_name << endl;
             }
 
         }

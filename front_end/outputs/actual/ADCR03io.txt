@@ -10,6 +10,7 @@ Welcome to the Auction App
 Enter command: 
 Enter username: 
 Select from below options
+          bid         
         advertise         
         addcredit         
           logout         
@@ -18,9 +19,7 @@ Select from below options
 
 Enter command: 
 How much credit you want to add: 
-
-Adding amount to account updated succesfully
-900672 added for bhargav
+ cannot exceed credit limit of $999.99 
 
 Enter command: 
 Logout successful!

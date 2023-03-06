@@ -21,9 +21,7 @@ Select from below options
          
 
 Enter command: 
-Enter username to be deleted: currentUser: islamuser to delete: not-existing
-
-User does not exist
+Enter username to be deleted: User does not exist
 
 Enter command: 
 Logout successful!

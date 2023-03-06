@@ -21,9 +21,8 @@ Select from below options
          
 
 Enter command: 
-Enter username to be deleted: currentUser: islamuser to delete: bhargav
-
-User deleted succesfully
+Enter username to be deleted: 
+Username owais will be deleted
 
 Enter command: 
 Logout successful!

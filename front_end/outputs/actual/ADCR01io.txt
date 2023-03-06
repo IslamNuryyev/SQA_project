@@ -24,8 +24,7 @@ Enter command:
 Credit for which user: 
 How much credit you want to add for user bhargav: 
 
-Adding amount to account updated succesfully
-424140 added for bhargav by admin islam
+ Credit amount willl be added
 
 Enter command: 
 Logout successful!

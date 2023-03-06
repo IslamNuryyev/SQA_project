@@ -21,9 +21,4 @@ Select from below options
          
 
 Enter command: 
-Enter new user username: 
-Enter new user user type: 
-User user45 Succesfully Added to transcation file 
-
-Enter command: 
 Logout successful!

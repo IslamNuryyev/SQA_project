@@ -21,10 +21,9 @@ Select from below options
          
 
 Enter command: 
-Enter BUYER'S username: Enter SELLER'S username: Enter amount to be refunded: 
-Seller account updated succesfully
-
-Buyer account updated succesfully
+Enter Buyer username: 
+Enter Seller username: 
+Enter amount to be refunded: Succesfully refuded amount
 
 Enter command: 
 Logout successful!

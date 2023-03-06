@@ -21,9 +21,7 @@ Select from below options
          
 
 Enter command: 
-Enter new user username: 
-Enter new user user type: 
-User user45 Succesfully Added to transcation file 
+Whats the item name: Item name cannot be more than 25 characters
 
 Enter command: 
 Logout successful!

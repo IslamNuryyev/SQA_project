@@ -10,20 +10,16 @@ Welcome to the Auction App
 Enter command: 
 Enter username: 
 Select from below options
-        create         
-        delete         
         advertise         
-          bid         
-         refund         
         addcredit         
           logout         
         
          
 
 Enter command: 
-Enter new user username: 
-Enter new user user type: 
-User user45 Succesfully Added to transcation file 
+Whats the item name: Starting price: 
+Auctioning for how many days: 
+Added mustang to transaction file
 
 Enter command: 
 Logout successful!

@@ -10,7 +10,6 @@ Welcome to the Auction App
 Enter command: 
 Enter username: 
 Select from below options
-          sell         
           bid         
         advertise         
         addcredit         
@@ -19,11 +18,16 @@ Select from below options
          
 
 Enter command: 
+newitem
+smart
+smart_watch
+sony_camera_20px
+sam_phone_30
 watch
  Select an item from above item list 
-current bid price: 130
+current bid price: 200
  How much you want to bid on: watch
- You have succesfully bid 500 on watch
+ Your bid amount of 500 on watchis added to file
 
 Enter command: 
 Logout successful!

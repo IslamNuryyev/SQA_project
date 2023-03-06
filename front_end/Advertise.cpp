@@ -4,7 +4,7 @@
 #include <iomanip>
 #include "Advertise.h"
 
-void Advertise :: postAdvertise (string SellerusrName, string item_name,  int numDays, int startPrice) {
+void Advertise :: postAdvertise (string SellerusrName, string item_name,  int numDays, double startPrice) {
     string modifiedItemmName;
         
     for (int i = 0; i < item_name.length(); i++) {
@@ -26,7 +26,7 @@ void Advertise :: postAdvertise (string SellerusrName, string item_name,  int nu
             
             // cout << "Added " << item_name << " to user_account.txt" << endl;
             //AdvertiseFile.close();
-            cout << "price is: " << startPrice << endl; 
+            // cout << "price is: " << startPrice << endl; 
             Cr_Trans <<  "03" << " " << fillItemName << " " << fillSeller << " " << std::setw(3) << std::setfill('0') << numDays << " " << std::setw(6) << std::setfill('0') << startPrice << endl;
             Cr_Trans.close();
             cout << "Added " << item_name << " to transaction file" << endl;

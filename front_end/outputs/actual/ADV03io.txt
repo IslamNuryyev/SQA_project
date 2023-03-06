@@ -10,20 +10,15 @@ Welcome to the Auction App
 Enter command: 
 Enter username: 
 Select from below options
-        create         
-        delete         
-        advertise         
           bid         
-         refund         
         addcredit         
           logout         
         
          
 
 Enter command: 
-Enter new user username: 
-Enter new user user type: 
-User user45 Succesfully Added to transcation file 
+you do not have Item Advertise privilege
+Select other option
 
 Enter command: 
 Logout successful!

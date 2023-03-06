@@ -21,7 +21,7 @@ Select from below options
          
 
 Enter command: 
-Enter BUYER'S username: Enter SELLER'S username: Enter amount to be refunded: Seller account does not exist
+Enter Buyer username: 
 Buyer account does not exist
 
 Enter command: 

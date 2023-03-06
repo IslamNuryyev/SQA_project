@@ -9,7 +9,12 @@ Welcome to the Auction App
 
 Enter command: 
 Enter username: 
-User does not exist
+Select from below options
+        advertise         
+        addcredit         
+          logout         
+        
+         
 
 Enter command: 
 Seller acounts cannot bid 

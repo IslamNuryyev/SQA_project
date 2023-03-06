@@ -9,20 +9,7 @@ Welcome to the Auction App
 
 Enter command: 
 Enter username: 
-Select from below options
-        create         
-        delete         
-        advertise         
-          bid         
-         refund         
-        addcredit         
-          logout         
-        
-         
-
-Enter command: 
-Enter new user username: 
-Username cannot exceed length 15 character
+User does not exist
 
 Enter command: 
 Logout successful!

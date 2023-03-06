@@ -248,40 +248,17 @@ int main( int argc, char** argv) {
 
                     cout << "Enter new user user type: " << endl;
                     cin >> newUserType;
-                    if ((newUserType != "AA" || newUserType != "FS" ||newUserType != "SS" || newUserType != "BS")) {
+                    if ((newUserType != "AA" && newUserType != "FS" && newUserType != "SS" && newUserType != "BS")) {
                         cout << "Enter AA FS BS or SS as user type" << endl;
                         break;
                     }
-                    
+                    else {
+                        Admin addNewUser;
+                        addNewUser.createUser(newUserName,newUserType,argv[1], argv[3] );
+                        break;
 
 
-                    // else {
-                    //     cout << "Enter new user user type: " << endl;
-                    //     cin >> newUserType;
-                    //     cout << "Enter new user initial credit: " << endl;
-                    //     cin >> newUserCredit;
-                    //     if (newUserCredit > 999999) {
-                    //         cout << "Cannot add credit amount more than $999999" << endl;
-                    //         break;
-                    //     }
-
-                    //     if (newUserName.length() < 15) {
-                            // if ((newUserType == "AA" || newUserType == "FS" ||newUserType == "SS" || newUserType == "BS")) {
-                            //     addNewUser.createUser(newUserName,newUserType,newUserCredit,argv[1], argv[3] );
-                            //     break;
-
-                    //         }
-                    //         else {
-                    //             cout << "Enter AA FS BS or SS as user type" << endl;
-                    //             break;
-                    //         }
-                    //     }
-                    //     else {
-                    //         cout << "Username cannot exceed length 15 character" << endl;
-                    //         break;
-                    //     }
-
-                    // }
+                    }
                 }
                 else {
                 cout << "You do not have permission to Create a User !! " << endl;
@@ -316,7 +293,7 @@ int main( int argc, char** argv) {
             if (checkUserMain(username) != "BS") {
                 string item_name;
                 int num_days;
-                int start_price;
+                double start_price;
 
                 cout << "Whats the item name: ";
                 cin.ignore();
@@ -327,7 +304,7 @@ int main( int argc, char** argv) {
                 }
                 cout << "Starting price: " << endl;
                 cin >> start_price;
-                if (start_price > 999) {
+                if (start_price > 999.99) {
                     cout << "Price cannot be more than 999.99" << endl;
                     break;
                 }

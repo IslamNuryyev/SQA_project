@@ -10,20 +10,28 @@ Welcome to the Auction App
 Enter command: 
 Enter username: 
 Select from below options
-        create         
-        delete         
         advertise         
-          bid         
-         refund         
         addcredit         
           logout         
         
          
 
 Enter command: 
-Enter new user username: 
-Enter new user user type: 
-User user45 Succesfully Added to transcation file 
+Whats the item name: Item name cannot be more than 25 characters
+
+Enter command: 
+Whats the item name: Starting price: 
+Price cannot be more than 999.99
+
+Enter command: 
+Whats the item name: Starting price: 
+Auctioning for how many days: 
+Item cannot be placed in auction for more than 100 days
+
+Enter command: 
+Whats the item name: Starting price: 
+Auctioning for how many days: 
+Added itemnameCar to transaction file
 
 Enter command: 
 Logout successful!

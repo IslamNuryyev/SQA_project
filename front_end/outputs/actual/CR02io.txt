@@ -10,7 +10,6 @@ Welcome to the Auction App
 Enter command: 
 Enter username: 
 Select from below options
-          sell         
           bid         
         advertise         
         addcredit         
