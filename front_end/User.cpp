@@ -78,7 +78,7 @@ User::User(string name, string type, float credit) {
         }
         else
         {
-            cerr << "Error opening file." << endl;
+            cerr << "LT01ERR - Error opening file." << endl;
         }
 
         return Returntype;
