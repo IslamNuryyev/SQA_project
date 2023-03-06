@@ -12,6 +12,8 @@ class Bidding : public User{
 
     public:
 
-    int bid (string usr_name, string user_files, string avai_item);
+    void bid (string usr_name, string user_files, string avai_item, string transactionFile );
+    int getBidPrice (string userBidItem,string avai_item);
+    string getSeller (string userBidItem,string avai_item); 
     
 };

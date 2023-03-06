@@ -37,11 +37,7 @@ public:
     int checkCredit(string user_name, string user_file);
     int locateUserLine(string name, string user_file);
 
-    int savetoFile (string usr, long total_credit, int currentCredit, string user_file, string transactionFile  );
+    int savetoFile (string usr, int toAddCredit, string user_file, string transactionFile );
 };
 
-// int main() {
-//     User user1("Islam", "ST", 1000.0);
-//     cout << user1.getUserName() << endl;
-// }
 #endif //SQA_PROJECT_USER_H

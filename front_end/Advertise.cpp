@@ -1,22 +1,35 @@
 #include <iostream>
 #include <string>
 #include <fstream>
+#include <iomanip>
 #include "Advertise.h"
 
-void Advertise :: postAdvertise (string SellerusrName, string item_name, int minBid, int numDays, int startPrice, int currBid) {
+void Advertise :: postAdvertise (string SellerusrName, string item_name,  int numDays, int startPrice) {
+    string modifiedItemmName;
+        
+    for (int i = 0; i < item_name.length(); i++) {
+        if (item_name[i] == ' ') {
+            modifiedItemmName += '_';
+            } else {
+                modifiedItemmName += item_name[i];
+                }
+    }
 
-     ofstream AdvertiseFile("availableItems.txt", ios::out | ios::app);
-    //  ofstream Cr_Trans("daily_transaction_file.txt",ios::out | ios::app);
-        if (AdvertiseFile.is_open()) 
+     //ofstream AdvertiseFile("items.txt", ios::out | ios::app);
+     ofstream Cr_Trans("daily_transaction_file.txt",ios::out | ios::app);
+
+        string fillItemName = modifiedItemmName + string(25 - modifiedItemmName.length(), ' ');
+        string fillSeller  = SellerusrName + string(15 - SellerusrName.length(), ' ');
+        if (Cr_Trans.is_open()) 
         {
-           
-            AdvertiseFile << item_name  << "_" << SellerusrName << "_" << "TEST" << "_" << numDays << "_" << "TEST" << endl;
+            //AdvertiseFile << fillItemName  << " " << fillSeller << " " << "NONE" << " " << std::setw(3) << std::setfill('0') << numDays << " " << std::setw(6) << std::setfill('0') << startPrice << endl;
             
-            cout << "Added " << item_name << " to user_account.txt" << endl;
-            AdvertiseFile.close();
-
-            // Cr_Trans <<  "01" << "_" << newUser.getUserName() << "_" << newUser.getUserType() << "_" << checkCredit(newUser.getUserName(),user_file) << endl;
-            // Create_Trans.close();
+            // cout << "Added " << item_name << " to user_account.txt" << endl;
+            //AdvertiseFile.close();
+            cout << "price is: " << startPrice << endl; 
+            Cr_Trans <<  "03" << " " << fillItemName << " " << fillSeller << " " << std::setw(3) << std::setfill('0') << numDays << " " << std::setw(6) << std::setfill('0') << startPrice << endl;
+            Cr_Trans.close();
+            cout << "Added " << item_name << " to transaction file" << endl;
         } else {
             cout << "Error: could not open user_account.txt for writing." << endl;
         }

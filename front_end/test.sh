@@ -4,7 +4,7 @@ Input_Files=../test_case_IO/testingfew/*.txt;
 TestOutputLocation=./outputs/actual;
 
 UserAccount=./user_account.txt
-availableItems=./tickets.txt
+availableItems=./items.txt
 TransactionFile=./daily_transaction_file.txt
 
 

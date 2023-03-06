@@ -23,11 +23,11 @@ int AddCredit::add_Credit(string user_name, string user_file, string transaction
         // cout << "total credit " << creditOnFile + credit_for_user << endl;
         long total_credit = creditOnFile + credit_for_user;
 
-        if (total_credit > 999999999 ) {
-            cout << " cannot exceed credit limit of 999999999 "<< endl;
+        if (credit_for_user > 999.99 ) {
+            cout << " cannot exceed credit limit of $999.99 "<< endl;
         }
         else {
-            User::savetoFile(user_name,total_credit,creditOnFile,user_file,transactionFile);
+            User::savetoFile(user_name,credit_for_user,user_file,transactionFile);
             cout << total_credit << " added for " << user_name<< endl;
         } // user_account.txt    daily_transaction_file.txt
     }
@@ -44,14 +44,21 @@ int AddCredit::add_Credit(string user_name, string user_file, string transaction
 
             long admin_total_credit = credit_for_user  + creditONfile;
 
-            if (admin_total_credit > 999999999) {
-                cout << "cannot exceed credit limit of 999999999 "<< endl;
+            if (credit_for_user > 999.99) {
+                cout << "cannot exceed credit limit of $999.99 "<< endl;
+                //break;
             }
+            // else if (credit_for_user > 1000) {
+            //     cout << "cannot add more than 1000 in a sesson " << endl;
+            // }
             else {
-                User::savetoFile(for_user,admin_total_credit,creditOnFile,user_file,transactionFile);
+                User::savetoFile(for_user,credit_for_user,user_file,transactionFile);
                 cout << admin_total_credit << " added for " << for_user << " by admin " << user_name << endl;
             }
 
+        }
+        else {
+            cout << "User does not exist" << endl;
         }
     }
 

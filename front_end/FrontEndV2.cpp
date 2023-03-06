@@ -43,6 +43,32 @@ void checkCurrentUserFile() {
 void mainMenu() {
 
 }
+bool ExistingUser(string user_name) {
+    ifstream file("user_account.txt");
+    string line;
+    bool userExist = false;
+
+    if (file.is_open()){
+        while (std::getline(file, line)){
+                stringstream ss(line);
+                string usr, usrType;
+                ss >> usr >> usrType;
+
+                if (usr ==  user_name) {
+                    userExist= true;
+                    }
+        }
+
+        file.close();
+    }
+    else
+    {
+        cerr << "Error opening file." << endl;
+    }
+
+    return userExist;
+  }
+
 
 string checkUserMain(string user_name) {
     ifstream file("user_account.txt");
@@ -53,20 +79,6 @@ string checkUserMain(string user_name) {
     {
         while (std::getline(file, line))
         {
-            // Find the first space character
-                // std::stringstream US(line);
-                // std::string usr;
-                // US >> usr;
-
-
-                // // getting user type from a line
-                // std::stringstream ss(line);
-                // std::string usrType;
-                // // Read the string between the first and second spaces
-                // ss >> usrType;
-                // ss.ignore(std::string::npos, ' ');
-                // ss >> usrType;
-
                 stringstream ss(line);
                 string usr, usrType;
                 ss >> usr >> usrType;
@@ -102,8 +114,7 @@ string checkUserMain(string user_name) {
   }
 //bhargav         SS 412818
 
-int main( int argc, char** argv)
-{
+int main( int argc, char** argv) {
     // cout << "Welcome to the Auction App" << endl;
     startupScreen();
     
@@ -171,7 +182,6 @@ int main( int argc, char** argv)
             else if (checkUserMain(username) == "FS") 
             {
                 cout << "Select from below options" << endl;
-                cout << "          sell         " << endl;
                 cout << "          bid         " << endl;
                 cout << "        advertise         " << endl;
                 cout << "        addcredit         " << endl;
@@ -227,13 +237,51 @@ int main( int argc, char** argv)
 
                     cout << "Enter new user username: " << endl;
                     cin >> newUserName;
+                    if (ExistingUser(newUserName) == true) {
+                        cout << "User already exists" << endl;
+                        break;
+                    }
+                    else if (newUserName.length() > 15) {
+                            cout << "Username cannot exceed length 15 character" << endl;
+                            break;
+                    }
+
                     cout << "Enter new user user type: " << endl;
                     cin >> newUserType;
-                    cout << "Enter new user initial credit: " << endl;
-                    cin >> newUserCredit;
+                    if ((newUserType != "AA" || newUserType != "FS" ||newUserType != "SS" || newUserType != "BS")) {
+                        cout << "Enter AA FS BS or SS as user type" << endl;
+                        break;
+                    }
+                    
 
-                    addNewUser.createUser(newUserName,newUserType,newUserCredit,argv[1], argv[3] );
-                    break;
+
+                    // else {
+                    //     cout << "Enter new user user type: " << endl;
+                    //     cin >> newUserType;
+                    //     cout << "Enter new user initial credit: " << endl;
+                    //     cin >> newUserCredit;
+                    //     if (newUserCredit > 999999) {
+                    //         cout << "Cannot add credit amount more than $999999" << endl;
+                    //         break;
+                    //     }
+
+                    //     if (newUserName.length() < 15) {
+                            // if ((newUserType == "AA" || newUserType == "FS" ||newUserType == "SS" || newUserType == "BS")) {
+                            //     addNewUser.createUser(newUserName,newUserType,newUserCredit,argv[1], argv[3] );
+                            //     break;
+
+                    //         }
+                    //         else {
+                    //             cout << "Enter AA FS BS or SS as user type" << endl;
+                    //             break;
+                    //         }
+                    //     }
+                    //     else {
+                    //         cout << "Username cannot exceed length 15 character" << endl;
+                    //         break;
+                    //     }
+
+                    // }
                 }
                 else {
                 cout << "You do not have permission to Create a User !! " << endl;
@@ -267,27 +315,40 @@ int main( int argc, char** argv)
         case 5:
             if (checkUserMain(username) != "BS") {
                 string item_name;
-                int min_bid;
                 int num_days;
                 int start_price;
-                int current_bid;
-                string highestBidder = "";
 
-                cout << "Whats the item name" << endl;
-                cin >>item_name;
-                cout << "Minimum bid" << endl;
-                cin >>min_bid;
-                cout << "Number of days" << endl;
-                cin >>num_days;
-                cout << "Starting price" << endl;
-                cin >>start_price;
-                cout << "Current bid" << endl;
-                cin >>current_bid;
-
-                Advertise putAdvertise;
-                putAdvertise.postAdvertise(username,item_name,min_bid,num_days,start_price,current_bid);
-
-
+                cout << "Whats the item name: ";
+                cin.ignore();
+                getline(cin, item_name);
+                if (item_name.length() > 25 ) {
+                    cout << "Item name cannot be more than 25 characters" << endl;
+                    break;
+                }
+                cout << "Starting price: " << endl;
+                cin >> start_price;
+                if (start_price > 999) {
+                    cout << "Price cannot be more than 999.99" << endl;
+                    break;
+                }
+                cout << "Auctioning for how many days: " << endl;
+                cin >> num_days;
+                if (num_days > 100) {
+                    cout << "Item cannot be placed in auction for more than 100 days" << endl;
+                    break;
+                }
+                if(item_name.length() <= 25 && start_price < 999 && num_days < 100 ) {
+                    Advertise putAdvertise;
+                    putAdvertise.postAdvertise(username,item_name,num_days,start_price);
+                }
+                else {
+                    cout << "somethinf went wrong" << endl;
+                }
+            
+            }
+            else {
+                cout << "you do not have Item Advertise privilege" << endl;
+                cout << "Select other option" << endl;
             }
 
             break;
@@ -296,7 +357,7 @@ int main( int argc, char** argv)
         case 6:
             if (checkUserMain(username) == "AA" || checkUserMain(username) == "FS" || checkUserMain(username) == "BS") {
                 Bidding newBid;
-                newBid.bid(username,argv[1], argv[2]);
+                newBid.bid(username,argv[1], argv[2], argv[3]);
                 break;
             }
             else {
@@ -309,9 +370,35 @@ int main( int argc, char** argv)
         // refund transaction code
         case 7:
             if (checkUserMain(username) == "AA") {
-                Refund newRefund;
-                newRefund.refund(argv[1], argv[3]);
-                break;
+                string buy_usr;
+                string sell_usr;
+                int refund_amount;
+                cout << "Enter Buyer username: " << endl;
+                cin >> buy_usr;
+                string checkBuyer = checkUserMain(buy_usr);
+                if (checkBuyer.length() == 0) {
+                    cout << "Buyer account does not exist" << endl;
+                    break;
+                } 
+                cout << "Enter Seller username: " << endl;
+                cin >> sell_usr;
+
+                string checkSeller = checkUserMain(sell_usr);
+                if (checkSeller.length() == 0) {
+                    cout << "Seller account does not exist" << endl;
+                    break;
+                }
+                cout << "Enter amount to be refunded: ";
+                cin >> refund_amount;
+
+                if (checkBuyer.length() > 0 && checkSeller.length() > 0 ) {
+                    Refund newRefund;
+                    newRefund.refund(buy_usr,sell_usr,refund_amount, argv[1], argv[3]);
+                    break;
+                }
+                else {
+                    cout << "refund cannot be processed" << endl;
+                }
             }
             else {
                 cout << "You do not have permission for Refund !! " << endl;
@@ -327,24 +414,17 @@ int main( int argc, char** argv)
             break;
         }
     } while (transactionCode != 2);
-}
+    }
 
 
 // islam           AA 999999
 // islam           FS 100002
 // baparekh3       AA 1234
-// owais           FS 121237
-// islam4          SS 97504
-// islam3          BS 102503
-// bhargav         SS 412818
 // bhar            AA 000035323
-
-// islam           AA 999999
-// islam           FS 100002
-// baparekh3       AA 1234
-// owais           FS 121237
-// bhar            AA 000035323
-// user01          SS 1.23454e+06
 // user02          AA 00001e+06
 // islam4          SS 000092504
-// islam3          BS 000109503
+// owais           FS 000120237
+// user01          SS 00000-999
+// bhhhdd          AA 000004354
+// islam3          BS 000135037
+

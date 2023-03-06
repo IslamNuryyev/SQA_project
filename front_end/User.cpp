@@ -1,6 +1,3 @@
-//
-// Created by Bhargav on 2023-03-01.
-//
 
 
 #include <iostream>
@@ -44,12 +41,6 @@ User::User(string name, string type, float credit) {
     void User::setIsLoggedIn(bool loggedIn) {
         isLoggedIn = loggedIn;
     }
-
-    // void logIn() {
-    // }
-
-    // void logOut() {
-    // }
 
     string User::checkUser(string user_name, string user_file) {
         ifstream file(user_file);
@@ -103,9 +94,6 @@ User::User(string name, string type, float credit) {
         int credit_amount = 0;
 
         while (getline(file3, line)) {
-            // string usr_name = line.substr(0, line.find(delimiter));
-            // string usr_type = line.substr(line.find(delimiter)+1, 2);
-            // string amount_on_file = line.substr(line.find(delimiter)+4, 8);
 
             stringstream ss(line);
             string usr_name, usr_type, amount_on_file;
@@ -155,16 +143,10 @@ User::User(string name, string type, float credit) {
         return -1;
     }
 
-    int User::savetoFile (string usr, long total_credit, int currentCredit, string user_file, string transactionFile  ) {
+    int User::savetoFile (string usr, int toAddCredit, string user_file, string transactionFile ) {
         ofstream Create_Trans2(transactionFile,ios::out | ios::app);
-        ifstream inFile6(user_file);
-        ofstream temp_File3("temp4.txt");
         string newValue; // this will contain new line with subtracted amount
 
-        if (!inFile6.is_open()) {
-            cout << "Error: Unable to open file!" << endl;
-            return -1;
-        }
 
         string fillUser = usr + string(15 - usr.length(), ' ');
         //newValue = fillUser + " " + checkUser(usr,user_file) + " " +  to_string(total_credit);
@@ -174,44 +156,18 @@ User::User(string name, string type, float credit) {
         string line;
 
         if (lineToReplace > 0 ) {
-            while (getline(inFile6, line)) {
-                if (lineNumber != lineToReplace) {
-                    temp_File3 << line << endl;
-                }
-                lineNumber++;
-            }
+            cout << "\n Credit amount willl be added" << endl;
 
-            // Remove the original input file
-            cout << "\nAdding amount to account updated succesfully" << endl;
-
-            temp_File3 <<  fillUser << " " << checkUser(usr,user_file) << " " << std::setw(9) << std::setfill('0') << to_string(total_credit) << endl;
+            //temp_File3 <<  fillUser << " " << checkUser(usr,user_file) << " " << std::setw(9) << std::setfill('0') << to_string(total_credit) << endl;
             
-            Create_Trans2 <<  "06" << " " << fillUser << " " << checkUser(usr,user_file) << " " << std::setw(9) << std::setfill('0') << to_string(total_credit) << endl;
+            Create_Trans2 <<  "06" << " " << fillUser << " " << checkUser(usr,user_file) << " " << std::setw(9) << std::setfill('0') << to_string(toAddCredit) << endl;
             Create_Trans2.close();
-
-            inFile6.close();
-            temp_File3.close();
-
-            remove("user_account.txt");
-
-            rename("temp4.txt", "user_account.txt");
 
         }
         else {
-            inFile6.close();
-            temp_File3.close();
-            //remove("temp.txt");
             cout << "\nUser does not exist" << endl;
 
         }
 
-
-        // cout << "money after minus " << newSellerCredit << endl;
-
         return 0;
     }
-
-// int main() {
-//     User user1("Islam", "ST", 1000.0);
-//     cout << user1.getUserName() << endl;
-// }
