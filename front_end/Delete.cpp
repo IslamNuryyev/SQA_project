@@ -12,7 +12,7 @@ int Delete :: deleteUser(string currentUser, string u_name, string type,string u
         string userExists = User::checkUser(u_name,user_file);
         if (Trans_file.is_open()) {
             if (currentUser == u_name ) {
-                cout << "Cannot delete current user" << endl;
+                cout << "DEL02ERR - Cannot delete current user" << endl;
             }
             else if (userExists.length()>0) {
                 cout << "\nUsername " << u_name << " will be deleted"  << endl;
@@ -22,7 +22,7 @@ int Delete :: deleteUser(string currentUser, string u_name, string type,string u
 
             }
             else {
-                cout << "User does not exist" << endl;
+                cout << "DEL03ERR - User does not exist" << endl;
             }
         }
 

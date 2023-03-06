@@ -277,7 +277,7 @@ int main( int argc, char** argv) {
                 break;
             }
             else {
-                cout << "LT10ERR - You do not have permission to Delete a User !! " << endl;
+                cout << "LT10ERR / DEL01ERR - You do not have permission to Delete a User !! " << endl;
                 cout << "Select appropriate option from above " << endl;
                 break;
             }
