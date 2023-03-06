@@ -11,8 +11,8 @@
 - Change lines 6, 26 and 45 into the user filepath to g++
 
 ### 2. Compile / Run
-###.exe version
+### .exe version
 - run FrontEndV2.exe
 
-###.cpp version
+### .cpp version
 - run and compile FrontEndV2.cpp
