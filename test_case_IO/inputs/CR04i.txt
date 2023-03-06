@@ -1,0 +1,6 @@
+login
+islam
+create
+user02
+AA
+logout

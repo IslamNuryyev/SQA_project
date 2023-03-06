@@ -1,0 +1,7 @@
+login
+islam4
+advertise
+mustang
+200
+30
+logout

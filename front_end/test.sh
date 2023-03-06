@@ -1,6 +1,6 @@
 
 # TEST_FILES=../test_case_IO/inputs/*.txt;
-Input_Files=../test_case_IO/inputs/*.txt;
+Input_Files=../test_case_IO/testingfew/*.txt;
 TestOutputLocation=./outputs/actual;
 
 UserAccount=./user_account.txt
