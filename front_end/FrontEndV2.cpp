@@ -316,12 +316,12 @@ int main( int argc, char** argv) {
                     putAdvertise.postAdvertise(username,item_name,num_days,start_price);
                 }
                 else {
-                    cout << "Something went wrong" << endl;
+                    cout << "ADV04ERR - Something went wrong" << endl;
                 }
             
             }
             else {
-                cout << "you do not have Item Advertise privilege" << endl;
+                cout << "ADV03ERR - You do not have Item Advertise privilege" << endl;
                 cout << "Select other option" << endl;
             }
 
@@ -335,7 +335,7 @@ int main( int argc, char** argv) {
                 break;
             }
             else {
-                cout << "Seller acounts cannot bid " << endl;;
+                cout << "BID03ERR - Seller acounts cannot bid " << endl;;
                 cout << "Select approprate option from above " << endl;
                 break;
             }

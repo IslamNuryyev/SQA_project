@@ -139,7 +139,7 @@ void Refund :: refund(string buy_userName, string sell_userName, int refund_amou
             
         }
         else {
-            cout << "One of the account does not exist" << endl;
+            cout << "REF04ERR - One of the account does not exist" << endl;
             success1 = false; 
             success2 = false;
         }
