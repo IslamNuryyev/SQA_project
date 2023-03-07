@@ -13,6 +13,7 @@
 ### 2. Compile / Run
 ### .exe version
 - run FrontEndV2.exe
+- To run with command line arguments, Run --> ./FrontEndV2.exe user_account.txt items.txt daily_transaction_file.txt
 
 ### .cpp version
 - run and compile FrontEndV2.cpp
