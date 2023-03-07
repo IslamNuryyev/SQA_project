@@ -94,7 +94,7 @@ void Bidding :: bid (string usr_name, string user_files, string avai_item, strin
                     Cr_Trans.close();
                 }
                 else {
-                    cout << " Bid atleast " << (currentBid*0.05) + currentBid << " on " << userBidItem <<  endl;
+                    cout << "BID05ERR - Bid at least " << (currentBid*0.05) + currentBid << " on " << userBidItem <<  endl;
                 }
 
             }

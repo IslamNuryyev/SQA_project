@@ -31,7 +31,7 @@ void Advertise :: postAdvertise (string SellerusrName, string item_name,  int nu
             Cr_Trans.close();
             cout << "Added " << item_name << " to transaction file" << endl;
         } else {
-            cout << "Error: could not open user_account.txt for writing." << endl;
+            cout << "ADV01ERR - Error: could not open user_account.txt for writing." << endl;
         }
 
 }

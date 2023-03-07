@@ -33,16 +33,7 @@ void startupScreen() {
     cout << "***************************************************************" << endl;
 }
 
-// This is where the check for the current user accounts file.
-void checkCurrentUserFile() {
-    // If file is empty or missing, throw an error
 
-
-}
-
-void mainMenu() {
-
-}
 bool ExistingUser(string user_name) {
     ifstream file("user_account.txt");
     string line;
@@ -164,8 +155,14 @@ int main( int argc, char** argv) {
         // login transaction code
         case 1:
             // asks for the username
-            cout << "Enter username: \n";
-            cin >> username;
+            if (isLoggedIn == false) {
+                cout << "Enter username: \n";
+                cin >> username;
+            } else {
+                cout << "LT07ERR - Cannot login while current session is active" << endl;
+                break;
+            }
+            
             isLoggedIn = true;
             if (checkUserMain(username) == "AA") {
                 cout << "Select from below options" << endl;
@@ -205,7 +202,7 @@ int main( int argc, char** argv) {
                 cout << "        \n         " << endl;
             }
             else {
-                 cout << "User does not exist" << endl;
+                 cout << "LT04ERR- User does not exist" << endl;
             }
 
             break;
@@ -215,7 +212,7 @@ int main( int argc, char** argv) {
                 cout << "Logout successful!" << endl;
                 break;
             } else {
-                cout << "Invalid logout" << endl;
+                cout << "LOT01ERR - Invalid logout" << endl;
                 // since this is an invalid logout, it will not proceed
                 transactionCode = 1;
                 break;
@@ -224,7 +221,7 @@ int main( int argc, char** argv) {
         // create transaction code
         case 3:
             if (isLoggedIn == false) {
-                cout << "Invalid command, you are not logged in" << endl;
+                cout << "LT06ERR - Invalid command, you are not logged in" << endl;
                 break;
             }
             else {
@@ -238,11 +235,11 @@ int main( int argc, char** argv) {
                     cout << "Enter new user username: " << endl;
                     cin >> newUserName;
                     if (ExistingUser(newUserName) == true) {
-                        cout << "User already exists" << endl;
+                        cout << "CR01ERR - User already exists" << endl;
                         break;
                     }
                     else if (newUserName.length() > 15) {
-                            cout << "Username cannot exceed length 15 character" << endl;
+                            cout << "CR03ERR - Username cannot exceed length 15 character" << endl;
                             break;
                     }
 
@@ -261,7 +258,7 @@ int main( int argc, char** argv) {
                     }
                 }
                 else {
-                cout << "You do not have permission to Create a User !! " << endl;
+                cout << "CR02ERR - You do not have permission to Create a User !! " << endl;
                 cout << "Select appropriate option from above " << endl;
                 break;
             }
@@ -280,7 +277,7 @@ int main( int argc, char** argv) {
                 break;
             }
             else {
-                cout << "You do not have permission to Delete a User !! " << endl;
+                cout << "LT10ERR / DEL01ERR - You do not have permission to Delete a User !! " << endl;
                 cout << "Select appropriate option from above " << endl;
                 break;
             }
@@ -319,12 +316,12 @@ int main( int argc, char** argv) {
                     putAdvertise.postAdvertise(username,item_name,num_days,start_price);
                 }
                 else {
-                    cout << "somethinf went wrong" << endl;
+                    cout << "ADV04ERR - Something went wrong" << endl;
                 }
             
             }
             else {
-                cout << "you do not have Item Advertise privilege" << endl;
+                cout << "ADV03ERR - You do not have Item Advertise privilege" << endl;
                 cout << "Select other option" << endl;
             }
 
@@ -338,7 +335,7 @@ int main( int argc, char** argv) {
                 break;
             }
             else {
-                cout << "Seller acounts cannot bid " << endl;;
+                cout << "BID03ERR - Seller acounts cannot bid " << endl;;
                 cout << "Select approprate option from above " << endl;
                 break;
             }

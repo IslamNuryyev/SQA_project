@@ -45,7 +45,7 @@ int AddCredit::add_Credit(string user_name, string user_file, string transaction
             long admin_total_credit = credit_for_user  + creditONfile;
 
             if (credit_for_user > 999.99) {
-                cout << "cannot exceed credit limit of $999.99 "<< endl;
+                cout << "ADDC05ERR - cannot exceed credit limit of $999.99 "<< endl;
                 //break;
             }
             // else if (credit_for_user > 1000) {
@@ -57,7 +57,7 @@ int AddCredit::add_Credit(string user_name, string user_file, string transaction
 
         }
         else {
-            cout << "User does not exist" << endl;
+            cout << "ADDC03ERR - User does not exist" << endl;
         }
     }
 
