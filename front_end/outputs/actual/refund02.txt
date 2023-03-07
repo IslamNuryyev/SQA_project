@@ -1,0 +1,28 @@
+***************************************************************
+Welcome to the Auction App
+ -- Created by     -- 
+ -- Luis Octavo    -- 
+ -- Owais Najmi    -- 
+ -- Islam Nuryyev  -- 
+ -- Bhargav Parekh -- 
+***************************************************************
+
+Enter command: 
+Enter username: 
+Select from below options
+        create         
+        delete         
+        advertise         
+          bid         
+         refund         
+        addcredit         
+          logout         
+        
+         
+
+Enter command: 
+Enter Buyer username: 
+Buyer account does not exist
+
+Enter command: 
+Logout successful!

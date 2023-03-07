@@ -17,12 +17,7 @@ do
 	testname=${filename%%.*};
 	
 	# executing frontend
-	./FrontEndV2 $UserAccount $availableItems $TransactionFile < $file  > $TestOutputLocation/$testname'o'.txt
+	./FrontEndV2 $UserAccount $availableItems $TransactionFile < $file  > $TestOutputLocation/$testname.txt
 done
-
-
-
-
-
 
 
