@@ -21,7 +21,7 @@ Select from below options
          
 
 Enter command: 
-Enter username to be deleted: Cannot delete current user
+Enter username to be deleted: DEL02ERR - Cannot delete current user
 
 Enter command: 
 Logout successful!

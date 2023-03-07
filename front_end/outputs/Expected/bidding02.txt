@@ -27,7 +27,7 @@ watch
  Select an item from above item list 
 current bid price: 200
  How much you want to bid on: watch
- Bid atleast 210 on watch
+BID05ERR - Bid at least 210 on watch
 
 Enter command: 
 Logout successful!

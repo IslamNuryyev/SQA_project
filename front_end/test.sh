@@ -15,7 +15,7 @@ do
 	#Set the filename of the current test to be used for output
 	filename=$(basename $file);
 	testname=${filename%%.*};
-	
+	echo "Testing $testname"
 	# executing frontend
 	./FrontEndV2 $UserAccount $availableItems $TransactionFile < $file  > $TestOutputLocation/$testname.txt
 done

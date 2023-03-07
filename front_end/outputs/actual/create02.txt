@@ -18,7 +18,7 @@ Select from below options
          
 
 Enter command: 
-You do not have permission to Create a User !! 
+CR02ERR - You do not have permission to Create a User !! 
 Select appropriate option from above 
 
 Enter command: 

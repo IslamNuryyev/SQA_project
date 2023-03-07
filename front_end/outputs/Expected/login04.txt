@@ -9,7 +9,7 @@ Welcome to the Auction App
 
 Enter command: 
 Enter username: 
-User does not exist
+LT04ERR- User does not exist
 
 Enter command: 
 Logout successful!

@@ -12,6 +12,8 @@ do
 
   # we have kept the file names of actual output and expected output to be the same.
   # if output of the both the files are same, bash echos PASSED or esle echos FAILED
+  echo "comparing $Terminal_Output/$filename with $EXPECTED_OUTPUTS/$filename"
+  
   if diff $Terminal_Output/$filename $EXPECTED_OUTPUTS/$filename; then
     echo "PASSED"
   else

@@ -17,7 +17,7 @@ Select from below options
          
 
 Enter command: 
-you do not have Item Advertise privilege
+ADV03ERR - You do not have Item Advertise privilege
 Select other option
 
 Enter command: 

@@ -1,6 +1,6 @@
-islam           AA 999999
-islam5          FS 100002
-baparekh3       AA 1234
+islam           AA 000999999
+islam5          FS 000100002
+baparekh3       AA 000001234
 bhar            AA 000035323
 islam4          SS 000092504
 owais           FS 000120237

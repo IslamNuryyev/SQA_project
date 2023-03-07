@@ -22,7 +22,7 @@ Select from below options
 
 Enter command: 
 Enter new user username: 
-Username cannot exceed length 15 character
+CR03ERR - Username cannot exceed length 15 character
 
 Enter command: 
 Logout successful!

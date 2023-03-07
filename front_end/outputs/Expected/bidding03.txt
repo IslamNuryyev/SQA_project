@@ -17,7 +17,7 @@ Select from below options
          
 
 Enter command: 
-Seller acounts cannot bid 
+BID03ERR - Seller acounts cannot bid 
 Select approprate option from above 
 
 Enter command: 
