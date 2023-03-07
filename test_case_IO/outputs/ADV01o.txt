@@ -1,4 +1,0 @@
-enter item name
-enter minimum bid
-enter auction length(days)
-saving to daily transaction file

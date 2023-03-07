@@ -1,9 +1,0 @@
-enter username
-enter password
-enter item name
-item name is too long. max length is 25 characters.Try again
-enter minimum bid
-minimum bid is too high. Max price is 999.99. Try again
-enter auction length(days)
-auction length is too long. Max length is 100. Try again
-saving to daily transaction file
