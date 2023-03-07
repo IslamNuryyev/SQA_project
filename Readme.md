@@ -16,3 +16,10 @@
 
 ### .cpp version
 - run and compile FrontEndV2.cpp
+- 
+## How to run Bash file
+### 1. Go to folder called front_end
+### 2. in Bash terminal run --> bash test.sh
+##### - This command will run the test script and stores actual output in the outputs/actual
+### 3. in Bash terminal run --> bash compare.sh
+##### - This command will run the compare script by comparing files in outputs/actual and outputs/Expected. It will also echo PASSED if outputs of both the files are same or FAILED if not
