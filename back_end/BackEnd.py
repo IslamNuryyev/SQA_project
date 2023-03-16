@@ -19,7 +19,9 @@ def main():
     # readTransactionLine()
 
     # Open the merged transaction file
-    file1 = open('back_end\pseudo_transaction_file.txt', 'r')
+    file1 = open('back_end\pseudo_transaction_file.txt', 'r') #windows
+    # file1 = open('./back_end/pseudo_transaction_file.txt', 'r') #mac
+
 
     # For loop to read line by line of the merged transaction file
     while True:
@@ -76,7 +78,9 @@ def main():
             # this is the formated line with filling the empty space with spaces.
             line_to_write='{:<20}{:<16}{:<15}{:<4}{:<7}\n'.format(Transaction_Item, Transaction_Seller_User, Bidder_User, Transaction_Num_Days, Transaction_initial_price) 
 
-            with open (r'back_end\items.txt', 'a') as Itemfile:
+            with open (r'back_end\items.txt', 'a') as Itemfile: #windows
+            # with open (r'./back_end/items.txt', 'a') as Itemfile: #mac
+
                  Itemfile.write(line_to_write)
                  print(line_to_write)
             
@@ -100,7 +104,9 @@ def main():
             TransactionFileBidder = transactionLinePartsArray[3]
             TransactionFileBid = transactionLinePartsArray[4]
 
-            with open(r'back_end\items.txt','r+') as itemsFile:
+            with open(r'back_end\items.txt','r+') as itemsFile: #windows
+            # with open(r'./back_end/items.txt','r+') as itemsFile: #mac
+                
                 itemsFileLine = itemsFile.readlines()
                 itemsFile.seek(0)
                 itemsFile.truncate()
@@ -131,11 +137,11 @@ def main():
             itemsFile.close()
             # DEBUG
             print("DEBUG: processing complete, commencing rewrite")
-            print(f"OLD: {old}")
-            if new is not None:
-                print(f"NEW: {new}")
-            else:
-                print(f"NEW: no changes")
+            # print(f"OLD: {old}")
+            # if new is not None:
+                # print(f"NEW: {new}")
+            # else:
+                # print(f"NEW: no changes")
 
             # # Note: this process is very inefficient, but it works for now
             # with open(r'back_end\items.txt', 'r') as file:
@@ -209,7 +215,8 @@ def main():
                 # Open the user file
                 # Find the user in the user account files
                 targetUser = ""
-                with open (r'back_end\user_account.txt', 'r') as userAccountFile:
+                with open (r'back_end\user_account.txt', 'r') as userAccountFile: #windows
+                # with open (r'./back_end/user_account.txt', 'r') as userAccountFile: #mac
                     # data = userAccountFile.read()
                     tempUserLines = userAccountFile.readlines()
 
@@ -252,12 +259,16 @@ def main():
             print("NEW: " + newUserAccountStatement)
 
             # Note: this process is very inefficient, but it works for now
-            with open(r'back_end\user_account.txt', 'r') as file:
+            with open(r'back_end\user_account.txt', 'r') as file: #windows
+            # with open(r'./back_end/user_account.txt', 'r') as file: #mac
+
                 data = file.read()
                 data = data.replace(targetUser, newUserAccountStatement)
             
             # Write the data
-            with open(r'back_end\user_account.txt', 'w') as file:
+            with open(r'back_end\user_account.txt', 'w') as file: #windows
+            # with open(r'./back_end/user_account.txt', 'w') as file: #mac
+
                 file.write(data)
 
             # DEBUG needs to be 15160 credits by the end of the modification
