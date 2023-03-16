@@ -57,10 +57,31 @@ def main():
 
         # BHARGAV
         if transactionCode == "03":
-            #print("DEBUG: Advertise initiated")
+            print("DEBUG: Advertise initiated")
+            print("Printing Line 03",line)
+
+            transaction_Adv_Array = re.findall(r'\S+', line)
+
+            # Transaction file partitions
+            Transaction_Item = transaction_Adv_Array[1]
+            Transaction_Seller_User = transaction_Adv_Array[2]
+            Transaction_Num_Days = transaction_Adv_Array[3]
+            Transaction_initial_price = transaction_Adv_Array[4]
+            Bidder_User= 'NONE' # since we are first time writing this item to file, we won't have a bidder yet.
+                                #this will be updated when user bids
+
+
+            # this is the formated line with filling the empty space with spaces.
+            line_to_write='{:<20}{:<16}{:<15}{:<4}{:<7}\n'.format(Transaction_Item, Transaction_Seller_User, Bidder_User, Transaction_Num_Days, Transaction_initial_price) 
+
+            with open (r'back_end\items.txt', 'a') as Itemfile:
+                 Itemfile.write(line_to_write)
+                 print(line_to_write)
+            
+            Itemfile.close()
+
 
             # Add advertise code here
-            ...
 
         # OWAIS
         if transactionCode == "04":
@@ -71,10 +92,25 @@ def main():
 
         # FREE
         if transactionCode == "05":
+            print("Printing Line 05",line)
+
+            # transaction_REF_Array = re.findall(r'\S+', line)
+
+            # # Transaction file partitions
+            # # 05 islam3          islam4          000005000
+            # REF_Buyer_user = transaction_Adv_Array[1]
+            # REF_Seller_User = transaction_Adv_Array[2]
+            # REF_Credit = transaction_Adv_Array[3]
+
+            # #update Buyer info in User_account file
+            # with open (r'back_end\items.txt', 'r+') as Itemfile:
+
+
+
+
             #print("DEBUG: Refund initiated")
 
             # Add refund code here
-            ...
 
         # LUIS
         if transactionCode == "06":
