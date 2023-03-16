@@ -1,0 +1,6 @@
+newitem             islam           NONE 009 000234
+smart               islam           NONE 128 000879
+smart_watch         islam           NONE 021 000124
+sony_camera_20px    islam           NONE 021 000022
+sam_phone_30        islam           NONE 043 000322
+watch               islam           NONE 055 000200

@@ -29,7 +29,9 @@ def main():
         transactionCode = fetchTransactionCode(line)
 
         # Use the transaction code to initiate the commands
+        print("-"*50)
         print(line)
+        
 
         # ISLAM
         if transactionCode == "01":
@@ -67,7 +69,64 @@ def main():
             #print("DEBUG: Bid initiated")
 
             # Add bid code initiated
-            ...
+            # Partition the transaction in an array of strings
+            transactionLinePartsArray = re.findall(r'\S+', line)
+            
+            # The partitions are now in digestible variable pieces
+
+            # Transaction file partitions
+            TransactionFileItem = transactionLinePartsArray[1]
+            TransactionFileBidder = transactionLinePartsArray[3]
+            TransactionFileBid = transactionLinePartsArray[4]
+
+            with open(r'back_end\items.txt','r+') as itemsFile:
+                itemsFileLine = itemsFile.readlines()
+                itemsFile.seek(0)
+                itemsFile.truncate()
+                # read each line in items file
+                for currentItem in itemsFileLine:
+                    # if line corresponds to item in transaction file
+                    if currentItem.find(TransactionFileItem) != -1:
+
+                        old = currentItem # used for debuggin below
+                        new = None # used for debigging
+                        
+                        # item partitions
+                        itemsLinePartsArray = re.findall(r'\S+', currentItem)
+                        itemsLineBidder = itemsLinePartsArray[2]
+                        itemsLineHighestBid = itemsLinePartsArray[4]
+                        
+                        # if transaction bid is greater than current highest bid, update it
+                        if(float(TransactionFileBid) > float(itemsLineHighestBid)):
+                            # update highest bid 
+                            currentItem = currentItem.replace(itemsLineHighestBid, TransactionFileBid)
+                            # update highest bidder
+                            currentItem = currentItem.replace(itemsLineBidder, TransactionFileBidder)
+                            new = currentItem
+                            
+                    itemsFile.write(currentItem)
+                # itemsFile.truncate()
+
+            itemsFile.close()
+            # DEBUG
+            print("DEBUG: processing complete, commencing rewrite")
+            print(f"OLD: {old}")
+            if new is not None:
+                print(f"NEW: {new}")
+            else:
+                print(f"NEW: no changes")
+
+            # # Note: this process is very inefficient, but it works for now
+            # with open(r'back_end\items.txt', 'r') as file:
+            #     data = file.read()
+            #     data = data.replace(currentItem, newItemStatement)
+
+            # # Write the data
+            # with open(r'back_end\items.txt', 'w') as file:
+            #     file.write(data)
+
+            # # DEBUG needs to be 15160 credits by the end of the modification
+            # file.close()
 
         # FREE
         if transactionCode == "05":
