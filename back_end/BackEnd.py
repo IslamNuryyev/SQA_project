@@ -42,12 +42,13 @@ def main():
             username = userPartsArray[1]
             user_type = userPartsArray[2]
             credits = userPartsArray[3]
+            new_value_padded = "{:0>9}".format(credits)
 
             # file = open('back_end\user_account.txt', 'a')  # windows
             create = open('./back_end/user_account.txt', 'a')  # mac
             username_padded = username.ljust(16)
             user_type_padded = user_type.ljust(3)
-            create.write(username_padded + user_type_padded + credits)
+            create.write(username_padded + user_type_padded + new_value_padded)
 
         # ISLAM
         if transactionCode == "02":
@@ -161,24 +162,57 @@ def main():
                 print(f"OLD: No Changes")
                 print(f"NEW: No Changes")
 
-        # FREE
+        # FREE Bhargav REFUND
         if transactionCode == "05":
             print("Printing Line 05", line)
+            UserRefundArray = re.findall(r'\S+', line)
+            print(UserRefundArray)
 
-            # transaction_REF_Array = re.findall(r'\S+', line)
+            # 05 islam3          islam4          000005000
+            buyerUserName =UserRefundArray[1]
+            SelerUserName =UserRefundArray[2]
+            RefCredit = int(UserRefundArray[3])
 
-            # # Transaction file partitions
-            # # 05 islam3          islam4          000005000
-            # REF_Buyer_user = transaction_Adv_Array[1]
-            # REF_Seller_User = transaction_Adv_Array[2]
-            # REF_Credit = transaction_Adv_Array[3]
+            
+            # updating Buyer account with new credit
+            with open(r'./back_end/user_account.txt', 'r') as f:
+                lines = f.readlines()
+                for i, line in enumerate(lines):
+                    parts = line.split()
+                    if parts[0] == buyerUserName:
 
-            # #update Buyer info in User_account file
-            # with open (r'back_end\items.txt', 'r+') as Itemfile:
+                        parts[0] = "{:<15}".format(parts[0])
+                        
+                        new_value_padded = "{:0>9}".format(str(int(parts[-1]) + RefCredit))
+                        parts[-1] = new_value_padded
+                        print("ref credit",parts[-1] )
+                        lines[i] = " ".join(parts) + "\n"
+            f.close()
+            
+            with open(r'./back_end/user_account.txt', "w") as f:
+                f.writelines(lines)
+            f.close()
 
-            # print("DEBUG: Refund initiated")
 
-            # Add refund code here
+            # updating Seller account with minus credit
+            with open(r'./back_end/user_account.txt', 'r') as f:
+                lines = f.readlines()
+                for i, line in enumerate(lines):
+                    parts = line.split()
+                    if parts[0] == SelerUserName:
+
+                        parts[0] = "{:<15}".format(parts[0])
+                        
+                        new_value_padded = "{:0>9}".format(str( int(parts[-1]) - RefCredit ))
+                        parts[-1] = new_value_padded
+                        lines[i] = " ".join(parts) + "\n"
+            f.close()
+            
+            with open(r'./back_end/user_account.txt', "w") as f:
+                f.writelines(lines)
+            f.close()
+
+
 
         # LUIS
         if transactionCode == "06":
