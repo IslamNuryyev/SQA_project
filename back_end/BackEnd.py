@@ -20,8 +20,8 @@ def main():
     # readTransactionLine()
 
     # Open the merged transaction file
-    # file1 = open('back_end\pseudo_transaction_file.txt', 'r') #windows
-    file1 = open('./back_end/pseudo_transaction_file.txt', 'r')  # mac
+    file1 = open('back_end\pseudo_transaction_file.txt', 'r') #windows
+    # file1 = open('./back_end/pseudo_transaction_file.txt', 'r')  # mac
 
     # For loop to read line by line of the merged transaction file
     while True:
@@ -121,7 +121,9 @@ def main():
 
             # with open(r'back_end\items.txt','r+') as itemsFile: #windows
             with open(r'./back_end/items.txt', 'r+') as itemsFile:  # mac
-
+                # for debugging
+                old = None
+                new = None
                 itemsFileLine = itemsFile.readlines()
                 itemsFile.seek(0)
                 itemsFile.truncate()
@@ -130,22 +132,20 @@ def main():
                     # if line corresponds to item in transaction file
                     if currentItem.find(TransactionFileItem) != -1:
 
-                        old = currentItem  # used for debuggin below
-                        new = None  # used for debigging
-
                         # item partitions
-                        itemsLinePartsArray = re.findall(r'\S+', currentItem)
-                        itemsLineBidder = itemsLinePartsArray[2]
-                        itemsLineHighestBid = itemsLinePartsArray[4]
+                        itemsLineParts = re.findall(r'\S+', currentItem)
+                        itemsLineItem = itemsLineParts[0]
+                        itemsLineSeller = itemsLineParts[1]
+                        itemsLineBidder = itemsLineParts[2]
+                        itemsLineNumDays = itemsLineParts[3]
+                        itemsLineHighestBid = itemsLineParts[4]
 
                         # if transaction bid is greater than current highest bid, update it
                         if (float(TransactionFileBid) > float(itemsLineHighestBid)):
-                            # update highest bid
-                            currentItem = currentItem.replace(
-                                itemsLineHighestBid, TransactionFileBid)
-                            # update highest bidder
-                            currentItem = currentItem.replace(
-                                itemsLineBidder, TransactionFileBidder)
+                            old = currentItem
+                            currentItem = '{:<20}{:<16}{:<15}{:<4}{:<7}\n'.format(itemsLineItem, itemsLineSeller, 
+                                                                                  TransactionFileBidder, itemsLineNumDays, 
+                                                                                  TransactionFileBid)
                             new = currentItem
 
                     itemsFile.write(currentItem)
@@ -154,23 +154,12 @@ def main():
             itemsFile.close()
             # DEBUG
             print("DEBUG: processing complete, commencing rewrite")
-            # print(f"OLD: {old}")
-            # if new is not None:
-            # print(f"NEW: {new}")
-            # else:
-            # print(f"NEW: no changes")
-
-            # # Note: this process is very inefficient, but it works for now
-            # with open(r'back_end\items.txt', 'r') as file:
-            #     data = file.read()
-            #     data = data.replace(currentItem, newItemStatement)
-
-            # # Write the data
-            # with open(r'back_end\items.txt', 'w') as file:
-            #     file.write(data)
-
-            # # DEBUG needs to be 15160 credits by the end of the modification
-            # file.close()
+            if old is not None and new is not None:
+                print(f"OLD: {old}NEW: {new}")
+                # print(f"NEW: {new}")
+            else:
+                print(f"OLD: No Changes")
+                print(f"NEW: No Changes")
 
         # FREE
         if transactionCode == "05":
