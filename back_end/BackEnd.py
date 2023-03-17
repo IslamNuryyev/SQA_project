@@ -36,6 +36,8 @@ def main():
 
         # ISLAM
         if transactionCode == "01":
+            print("DEBUG: Create Initiated")
+
             userPartsArray = re.findall(r'\S+', line)
             username = userPartsArray[1]
             user_type = userPartsArray[2]
@@ -49,12 +51,30 @@ def main():
 
         # ISLAM
         if transactionCode == "02":
-            # print("DEBUG: Delete Initiated")
+            print("DEBUG: Delete Initiated")
 
-            # Add delete code here
-            ...
+            deleteUserPartsArray = re.findall(r'\S+', line)
+            usernameToDelete = deleteUserPartsArray[1]
 
-        # BHARGAV
+            with open('./back_end/user_account.txt', 'r') as f:
+                lines = f.readlines()
+
+            # find out what line number to delete
+            line_number = 0
+            for line in lines:
+                line_number += 1
+                if (usernameToDelete == line[:len(usernameToDelete)]):
+                    break
+
+            # Remove line we want to delete from the array
+            if line_number <= len(lines):
+                del lines[line_number-1]
+
+            # Override all other lines
+            with open("./back_end/user_account.txt", 'w') as f:
+                f.writelines(lines)
+
+       # BHARGAV
         if transactionCode == "03":
             print("DEBUG: Advertise initiated")
             print("Printing Line 03", line)
