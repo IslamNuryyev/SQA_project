@@ -1,9 +1,20 @@
 import re
-
+import os
 
 def mergeTransactionFiles():
-    ...
-
+    inputs = []
+    for file in os.listdir("back_end/transaction_files"):
+        if file.endswith(".txt"):
+            inputs.append(os.path.join("back_end/transaction_files", file))
+    #print(inputs)
+    with open('back_end\merged_file.txt', 'w') as outfile:
+        for fname in inputs:
+            with open(fname) as infile:
+                for line in infile:
+                    # Remove the "00" from each transaction file
+                    if not line.strip("\n").startswith('00'):
+                        outfile.write(line)
+            #outfile.write("\n")
 
 def fetchTransactionCode(transactionLine):
     return transactionLine[:2]
