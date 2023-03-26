@@ -33,8 +33,8 @@ def main():
     # readTransactionLine()
 
     # Open the merged transaction file
-    file1 = open('back_end\pseudo_transaction_file.txt', 'r') #windows
-    # file1 = open('./back_end/pseudo_transaction_file.txt', 'r')  # mac
+    # file1 = open('back_end\pseudo_transaction_file.txt', 'r') #windows
+    file1 = open('./back_end/pseudo_transaction_file.txt', 'r')  # mac
 
     # For loop to read line by line of the merged transaction file
     while True:
