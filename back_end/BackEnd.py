@@ -3,10 +3,12 @@ import os
 
 def mergeTransactionFiles():
     inputs = []
+    # Create mac alternative path here
     for file in os.listdir("back_end/transaction_files"):
         if file.endswith(".txt"):
             inputs.append(os.path.join("back_end/transaction_files", file))
     #print(inputs)
+    # Create mac alternative path here
     with open('back_end\merged_file.txt', 'w') as outfile:
         for fname in inputs:
             with open(fname) as infile:

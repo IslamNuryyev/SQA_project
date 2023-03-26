@@ -1,6 +1,5 @@
 01 user45          SS 0
 02 user01          SS 000000999
-02 user03          SS 000000999
 03 njnjn_fgf           islam           043 000003
 04 newitem             islam           islam           0245.7
 05 islam3          islam4          000005000
