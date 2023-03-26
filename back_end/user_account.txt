@@ -2,4 +2,3 @@ islam           AA 000999999
 islam5          FS 000100002
 user01          SS 000000000
 user03          SS 000000000
-user45          SS 000000000
