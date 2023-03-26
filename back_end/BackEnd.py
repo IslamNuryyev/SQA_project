@@ -1,13 +1,14 @@
 import re
 import os
 
+
 def mergeTransactionFiles():
     inputs = []
     # Create mac alternative path here
     for file in os.listdir("back_end/transaction_files"):
         if file.endswith(".txt"):
             inputs.append(os.path.join("back_end/transaction_files", file))
-    #print(inputs)
+    # print(inputs)
     # Create mac alternative path here
     with open('back_end\merged_file.txt', 'w') as outfile:
         for fname in inputs:
@@ -16,7 +17,8 @@ def mergeTransactionFiles():
                     # Remove the "00" from each transaction file
                     if not line.strip("\n").startswith('00'):
                         outfile.write(line)
-            #outfile.write("\n")
+            # outfile.write("\n")
+
 
 def fetchTransactionCode(transactionLine):
     return transactionLine[:2]
@@ -61,7 +63,8 @@ def main():
             create = open('./back_end/user_account.txt', 'a')  # mac
             username_padded = username.ljust(16)
             user_type_padded = user_type.ljust(3)
-            create.write(username_padded + user_type_padded + new_value_padded)
+            create.write('\n' + username_padded +
+                         user_type_padded + new_value_padded)
 
         # ISLAM
         if transactionCode == "02":
@@ -157,8 +160,8 @@ def main():
                         # if transaction bid is greater than current highest bid, update it
                         if (float(TransactionFileBid) > float(itemsLineHighestBid)):
                             old = currentItem
-                            currentItem = '{:<20}{:<16}{:<15}{:<4}{:<7}\n'.format(itemsLineItem, itemsLineSeller, 
-                                                                                  TransactionFileBidder, itemsLineNumDays, 
+                            currentItem = '{:<20}{:<16}{:<15}{:<4}{:<7}\n'.format(itemsLineItem, itemsLineSeller,
+                                                                                  TransactionFileBidder, itemsLineNumDays,
                                                                                   TransactionFileBid)
                             new = currentItem
 
@@ -182,11 +185,10 @@ def main():
             print(UserRefundArray)
 
             # 05 islam3          islam4          000005000
-            buyerUserName =UserRefundArray[1]
-            SelerUserName =UserRefundArray[2]
+            buyerUserName = UserRefundArray[1]
+            SelerUserName = UserRefundArray[2]
             RefCredit = int(UserRefundArray[3])
 
-            
             # updating Buyer account with new credit
             with open(r'./back_end/user_account.txt', 'r') as f:
                 lines = f.readlines()
@@ -195,17 +197,17 @@ def main():
                     if parts[0] == buyerUserName:
 
                         parts[0] = "{:<15}".format(parts[0])
-                        
-                        new_value_padded = "{:0>9}".format(str(int(parts[-1]) + RefCredit))
+
+                        new_value_padded = "{:0>9}".format(
+                            str(int(parts[-1]) + RefCredit))
                         parts[-1] = new_value_padded
-                        print("ref credit",parts[-1] )
+                        print("ref credit", parts[-1])
                         lines[i] = " ".join(parts) + "\n"
             f.close()
-            
+
             with open(r'./back_end/user_account.txt', "w") as f:
                 f.writelines(lines)
             f.close()
-
 
             # updating Seller account with minus credit
             with open(r'./back_end/user_account.txt', 'r') as f:
@@ -215,17 +217,16 @@ def main():
                     if parts[0] == SelerUserName:
 
                         parts[0] = "{:<15}".format(parts[0])
-                        
-                        new_value_padded = "{:0>9}".format(str( int(parts[-1]) - RefCredit ))
+
+                        new_value_padded = "{:0>9}".format(
+                            str(int(parts[-1]) - RefCredit))
                         parts[-1] = new_value_padded
                         lines[i] = " ".join(parts) + "\n"
             f.close()
-            
+
             with open(r'./back_end/user_account.txt', "w") as f:
                 f.writelines(lines)
             f.close()
-
-
 
         # LUIS
         if transactionCode == "06":
