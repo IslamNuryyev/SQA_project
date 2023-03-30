@@ -1,7 +1,6 @@
 import re
 import os
-def deleteUser(line):
-    user_account_file = os.path.join("SQA_project", "back_end", "user_account.txt")
+def deleteUser(line,user_account_file):
     print("DEBUG: Delete Initiated")
     deleteUserPartsArray = re.findall(r'\S+', line)
     usernameToDelete = deleteUserPartsArray[1]

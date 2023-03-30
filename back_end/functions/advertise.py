@@ -1,8 +1,7 @@
 import re
 import os
 
-def advertise(line):
-    item_file = os.path.join("SQA_project", "back_end", "items.txt")
+def advertise(line,item_file):
     exists = False
     print("DEBUG: Advertise initiated")
     print("Printing Line 03", line)

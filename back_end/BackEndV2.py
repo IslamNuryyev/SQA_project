@@ -12,6 +12,8 @@ def fetchTransactionCode(transactionLine):
     return transactionLine[:2]
 
 def main():
+    user_account_file = os.path.join("SQA_project", "back_end", "user_account.txt")
+    item_file = os.path.join("SQA_project", "back_end", "user_account.txt")
 
     transactionCode = ""
     file1 = open(r'SQA_project\back_end\pseudo_transaction_file.txt', 'r') 
@@ -26,32 +28,32 @@ def main():
 
         # ISLAM
         if transactionCode == "01":
-            createUser(line)
+            createUser(line,user_account_file)
             #...
         # ISLAM
         if transactionCode == "02":
             
-            deleteUser(line)
+            deleteUser(line,user_account_file)
         
        # BHARGAV
         if transactionCode == "03":
            #...
-           advertise(line)
+           advertise(line,item_file)
 
         # OWAIS
         if transactionCode == "04":
             #...
-            bid(line)
+            bid(line,item_file)
 
         # FREE Bhargav REFUND
         if transactionCode == "05":
             #...
-            refund(line)
+            refund(line,user_account_file)
         
         # LUIS
         if transactionCode == "06":
             #...
-            addCredit(line)
+            addCredit(line, user_account_file)
         if not line:
             break
 

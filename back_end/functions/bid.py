@@ -1,8 +1,7 @@
 import re
 import os
 
-def bid(line):
-    item_file = os.path.join("SQA_project", "back_end", "items.txt")
+def bid(line,item_file):
     transactionLineParts = re.findall(r'\S+', line)
      # Transaction file partitions
     TransactionFileItem = transactionLineParts[1]

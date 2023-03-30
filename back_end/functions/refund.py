@@ -1,8 +1,7 @@
 import re
 import os
 
-def refund(line):
-    user_account_file = os.path.join("SQA_project", "back_end", "user_account.txt")
+def refund(line,user_account_file):
     print("Printing Line 05", line)
     UserRefundArray = re.findall(r'\S+', line)
     print(UserRefundArray)

@@ -1,12 +1,11 @@
 import re
 import os
-def createUser(line):
+def createUser(line,user_account_file ):
     userPartsArray = re.findall(r'\S+', line)
     username = userPartsArray[1]
     user_type = userPartsArray[2]
     credits = userPartsArray[3]
     exists = False
-    user_account_file = os.path.join("SQA_project", "back_end", "user_account.txt")
         # Check if user already exists
     with open(user_account_file, 'r') as f:
         lines = f.readlines()

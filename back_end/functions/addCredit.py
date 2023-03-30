@@ -1,7 +1,7 @@
 import re
 import os
 
-def addCredit(line):
+def addCredit(line, file):
     transactionLinePartsArray = re.findall(r'\S+', line)
     TransactionFileUser = transactionLinePartsArray[1]
     TransactionFileUserType = transactionLinePartsArray[2]
@@ -10,7 +10,7 @@ def addCredit(line):
     user_account_file = os.path.join("SQA_project", "back_end", "user_account.txt")
 
         # Open the user account file for reading
-    with open(user_account_file, 'r') as f:
+    with open(file, 'r') as f:
     #with open(r'SQA_project\back_end\user_account.txt', 'r') as f:
         lines = f.readlines()
 
@@ -33,5 +33,5 @@ def addCredit(line):
         print("Use does not exist\n")
 
     # Write the updated file contents back to the file
-    with open(user_account_file, 'w') as f:
+    with open(file, 'w') as f:
         f.writelines(lines)
