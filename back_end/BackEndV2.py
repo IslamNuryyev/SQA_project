@@ -16,7 +16,10 @@ def main():
     item_file = os.path.join("SQA_project", "back_end", "user_account.txt")
 
     transactionCode = ""
-    file1 = open(r'back_end\pseudo_transaction_file.txt', 'r') 
+
+    transactonFile = os.path.join("SQA_project", "back_end", "pseudo_transaction_file.txt")
+    file1 = open(transactonFile, 'r') 
+    
 
     # For loop to read line by line of the merged transaction file
     while True:
