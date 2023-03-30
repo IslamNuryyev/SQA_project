@@ -13,7 +13,7 @@ def fetchTransactionCode(transactionLine):
 
 def main():
     user_account_file = os.path.join("SQA_project", "back_end", "user_account.txt")
-    item_file = os.path.join("SQA_project", "back_end", "user_account.txt")
+    item_file = os.path.join("SQA_project", "back_end", "items.txt")
 
     transactionCode = ""
 
