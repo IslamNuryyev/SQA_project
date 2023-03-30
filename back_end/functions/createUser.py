@@ -1,12 +1,14 @@
 import re
+import os
 def createUser(line):
     userPartsArray = re.findall(r'\S+', line)
     username = userPartsArray[1]
     user_type = userPartsArray[2]
     credits = userPartsArray[3]
     exists = False
+    user_account_file = os.path.join("SQA_project", "back_end", "user_account.txt")
         # Check if user already exists
-    with open(r'SQA_project\back_end\user_account.txt', 'r') as f:
+    with open(user_account_file, 'r') as f:
         lines = f.readlines()
         for line in lines:
             if line.startswith(username):
@@ -15,7 +17,7 @@ def createUser(line):
     f.close()
     
     if (exists == False):
-        with open(r'SQA_project\back_end\user_account.txt', 'a+') as f:
+        with open(user_account_file, 'a+') as f:
                     # Create new line with given values
             new_value_padded = "{:0>9}".format(credits)
             username_padded = username.ljust(15)

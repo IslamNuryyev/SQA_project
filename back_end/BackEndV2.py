@@ -27,24 +27,30 @@ def main():
         # ISLAM
         if transactionCode == "01":
             createUser(line)
+            #...
         # ISLAM
         if transactionCode == "02":
+            
             deleteUser(line)
         
        # BHARGAV
         if transactionCode == "03":
+           #...
            advertise(line)
 
         # OWAIS
         if transactionCode == "04":
+            #...
             bid(line)
 
         # FREE Bhargav REFUND
         if transactionCode == "05":
+            #...
             refund(line)
         
         # LUIS
         if transactionCode == "06":
+            #...
             addCredit(line)
         if not line:
             break

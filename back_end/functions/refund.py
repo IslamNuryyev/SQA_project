@@ -1,6 +1,8 @@
 import re
+import os
 
 def refund(line):
+    user_account_file = os.path.join("SQA_project", "back_end", "user_account.txt")
     print("Printing Line 05", line)
     UserRefundArray = re.findall(r'\S+', line)
     print(UserRefundArray)
@@ -11,9 +13,11 @@ def refund(line):
     RefCredit = int(UserRefundArray[3])
 
             # updating Buyer account with new credit
-    with open(r'SQA_project\back_end\user_account.txt', 'r') as f:
+    with open(user_account_file, 'r') as f:
         lines = f.readlines()
         for i, line in enumerate(lines):
+            if not line.strip():
+                continue
             parts = line.split()
             if parts[0] == buyerUserName:
                 parts[0] = "{:<15}".format(parts[0])
@@ -23,12 +27,12 @@ def refund(line):
                 lines[i] = " ".join(parts) + "\n"
     f.close()
 
-    with open(r'SQA_project\back_end\user_account.txt', "w") as f:
+    with open(user_account_file, "w") as f:
         f.writelines(lines)
     f.close()
 
             # updating Seller account with minus credit
-    with open(r'SQA_project\back_end\user_account.txt', 'r') as f:
+    with open(user_account_file, 'r') as f:
         lines = f.readlines()
         for i, line in enumerate(lines):
             parts = line.split()
@@ -38,6 +42,6 @@ def refund(line):
                 parts[-1] = new_value_padded
                 lines[i] = " ".join(parts) + "\n"
     f.close()
-    with open(r'SQA_project\back_end\user_account.txt', "w") as f:
+    with open(user_account_file, "w") as f:
         f.writelines(lines)
     f.close()

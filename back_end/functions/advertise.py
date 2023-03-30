@@ -1,6 +1,8 @@
 import re
+import os
 
 def advertise(line):
+    item_file = os.path.join("SQA_project", "back_end", "items.txt")
     exists = False
     print("DEBUG: Advertise initiated")
     print("Printing Line 03", line)
@@ -19,7 +21,7 @@ def advertise(line):
             # this is the formated line with filling the empty space with spaces.
     line_to_write = '{:<20}{:<16}{:<15}{:<4}{:<7}\n'.format(Transaction_Item, Transaction_Seller_User, Bidder_User, Transaction_Num_Days, Transaction_initial_price)
 
-    with open(r'SQA_project\back_end\items.txt', 'r') as f:
+    with open(item_file, 'r') as f:
         lines = f.readlines()
         for line in lines:
             if line.startswith(Transaction_Item):
@@ -29,7 +31,7 @@ def advertise(line):
 
             # with open (r'back_end\items.txt', 'a') as Itemfile: #windows
     if (exists == False):
-        with open(r'SQA_project\back_end\items.txt', 'a') as Itemfile:
+        with open(item_file, 'a') as Itemfile:
             Itemfile.write(line_to_write)
             print(line_to_write)   
         Itemfile.close() 
