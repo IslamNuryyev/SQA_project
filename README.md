@@ -1,9 +1,4 @@
 # Readme - CSCI 3060U BackEnd Test Phase
-## Branch Status
-- master - Outdated ❌
-- BhargavBranch - Outdated ❌
-- DestBranch - Outdated ❌
-- LatestBranch - Up to date ✔️
 
 ## How to run Statement Coverage Tests
 - Coverage tests are located under **SQA_project/back_end/functions/coverageTests**
