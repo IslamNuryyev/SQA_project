@@ -1,4 +1,4 @@
-# Readme - CSCI 3060U
+# Readme - CSCI 3060U BackEnd Test Phase
 ## Branch Status
 - master - Outdated ❌
 - BhargavBranch - Outdated ❌
