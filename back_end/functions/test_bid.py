@@ -2,12 +2,6 @@ import os
 import pytest
 from bid import bid
 
-from tempfile import NamedTemporaryFile
-
-import os
-import pytest
-from bid import bid
-
 
 from tempfile import NamedTemporaryFile
 
