@@ -27,6 +27,7 @@ python -m coverage report
 python -m coverage html
 ```
  - To see report, access the **index.html** file under **htmlcov** folder
+ - There should be already a report available for you to see
 
 
 ## How to run PATH COVERAGE TESTS
