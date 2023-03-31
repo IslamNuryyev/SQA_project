@@ -1,9 +1,11 @@
 import os
 import pytest
 from tempfile import NamedTemporaryFile
-from addCredit import addCredit
+
 
 from tempfile import NamedTemporaryFile
+
+from back_end.functions.addCredit import addCredit
 
 @pytest.fixture
 def user_account_file():

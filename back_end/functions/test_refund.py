@@ -1,6 +1,8 @@
 import os
 import tempfile
-from refund import refund
+
+from back_end.functions.refund import refund
+
 
 def test_refund():
     # create temporary user account file with test data

@@ -1,6 +1,8 @@
 import os
-from advertise import advertise
+
 from tempfile import NamedTemporaryFile
+
+from back_end.functions.advertise import advertise
 
 def test_advertise():
     # create a temporary item file

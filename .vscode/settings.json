@@ -50,5 +50,17 @@
         "xlocmon": "cpp",
         "xloctime": "cpp"
     },
-    "C_Cpp.errorSquiggles": "disabled"
+    "C_Cpp.errorSquiggles": "disabled",
+    "python.testing.pytestArgs": [
+        "back_end"
+    ],
+    "python.testing.unittestEnabled": false,
+    "python.testing.pytestEnabled": true,
+    "python.testing.unittestArgs": [
+        "-v",
+        "-s",
+        "./back_end",
+        "-p",
+        "test_*.py"
+    ]
 }

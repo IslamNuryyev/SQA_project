@@ -1,6 +1,10 @@
 import os
 from tempfile import NamedTemporaryFile
-from deleteUser import deleteUser
+
+from back_end.functions.deleteUser import deleteUser
+
+
+
 
 def test_delete_user():
     # create a temporary file for testing

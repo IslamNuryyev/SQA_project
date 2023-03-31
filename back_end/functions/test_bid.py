@@ -1,9 +1,11 @@
 import os
 import pytest
-from bid import bid
+
 
 
 from tempfile import NamedTemporaryFile
+
+from back_end.functions.bid import bid
 
 
 @pytest.fixture
