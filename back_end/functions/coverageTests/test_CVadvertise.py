@@ -6,6 +6,7 @@ from tempfile import NamedTemporaryFile
 from back_end.functions.advertise import advertise
 
 
+
 class test_advertise(unittest.TestCase):
     def setUp(self):
         self.user_account_file = NamedTemporaryFile(mode="w", delete=False)

@@ -2,9 +2,6 @@ import os
 import pytest
 from tempfile import NamedTemporaryFile
 
-
-from tempfile import NamedTemporaryFile
-
 from back_end.functions.addCredit import addCredit
 
 @pytest.fixture
