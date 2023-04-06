@@ -4,7 +4,6 @@ import os
 def advertise(line,item_file):
     exists = False
     print("DEBUG: Advertise initiated")
-    print("Printing Line 03", line)
 
     transaction_Adv_Array = re.findall(r'\S+', line)
 
@@ -18,7 +17,7 @@ def advertise(line,item_file):
             # this will be updated when user bids
 
             # this is the formated line with filling the empty space with spaces.
-    line_to_write = '{:<20}{:<16}{:<15}{:<4}{:<7}\n'.format(Transaction_Item, Transaction_Seller_User, Bidder_User, Transaction_Num_Days, Transaction_initial_price)
+    line_to_write = '{:<20}{:<16}{:<16}{:<4}{:<7}\n'.format(Transaction_Item, Transaction_Seller_User, Bidder_User, Transaction_Num_Days, Transaction_initial_price)
 
     with open(item_file, 'r') as f:
         lines = f.readlines()
@@ -32,5 +31,5 @@ def advertise(line,item_file):
     if (exists == False):
         with open(item_file, 'a') as Itemfile:
             Itemfile.write(line_to_write)
-            print(line_to_write)   
+            print("ADVERTISE Succesfull")   
         Itemfile.close() 

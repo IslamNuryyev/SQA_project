@@ -11,13 +11,20 @@ from functions.bid import bid
 def fetchTransactionCode(transactionLine):
     return transactionLine[:2]
 
-def main():
-    user_account_file = os.path.join("SQA_project", "back_end", "user_account.txt")
-    item_file = os.path.join("SQA_project", "back_end", "items.txt")
+def main(): 
+    user_account_file = os.path.join("front_end", "src", "UserAccountsFile.txt")
+    #user_account_file = "front_end/src/UserAccountsFile.txt"
+
+   # item_file = os.path.join("front_end\src\AvailableItemsFile.txt")
+    item_file = os.path.join("front_end", "src", "AvailableItemsFile.txt")
 
     transactionCode = ""
 
-    transactonFile = os.path.join("SQA_project", "back_end", "pseudo_transaction_file.txt")
+    #transactonFile = "front_end/src/DailyTransactionFile.txt"
+    transactonFile = os.path.join("front_end", "src", "DailyTransactionFile.txt")
+    
+
+    #transactonFile = os.path.join("SQA_project", "front_end", "src","DailyTransactionFile.txt")
     file1 = open(transactonFile, 'r') 
     
 
@@ -35,27 +42,27 @@ def main():
             #...
         # ISLAM
         if transactionCode == "02":
-            
-            deleteUser(line,user_account_file)
+           # ...
+           deleteUser(line,user_account_file)
         
        # BHARGAV
         if transactionCode == "03":
-           #...
+           
            advertise(line,item_file)
 
         # OWAIS
         if transactionCode == "04":
-            #...
+            
             bid(line,item_file)
 
         # FREE Bhargav REFUND
         if transactionCode == "05":
-            #...
+            
             refund(line,user_account_file)
         
         # LUIS
         if transactionCode == "06":
-            #...
+            
             addCredit(line, user_account_file)
         if not line:
             break

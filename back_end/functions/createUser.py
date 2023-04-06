@@ -21,7 +21,7 @@ def createUser(line,user_account_file ):
             new_value_padded = "{:0>9}".format(credits)
             username_padded = username.ljust(15)
             user_type_padded = user_type.ljust(2)
-            new_line = f"{username_padded} {user_type_padded} {new_value_padded}\n"
+            new_line = f"{username_padded} {user_type_padded} {new_value_padded} password\n"
             f.write(new_line)
-            print("User added successfully")
+            print("CREATE USER Succesfull")
         f.close()

@@ -48,7 +48,8 @@
         "sstream": "cpp",
         "vector": "cpp",
         "xlocmon": "cpp",
-        "xloctime": "cpp"
+        "xloctime": "cpp",
+        "functional": "cpp"
     },
     "C_Cpp.errorSquiggles": "disabled",
     "python.testing.pytestArgs": [

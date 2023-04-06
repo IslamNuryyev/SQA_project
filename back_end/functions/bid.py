@@ -16,11 +16,11 @@ def bid(line,item_file):
             parts = line.split()
             currentBid = float(parts[-1])
             if float(TransactionFileBid) > float(currentBid):
-                newLine = '{:<20}{:<16}{:<15}{:<4}{:<7}\n'.format(parts[0],TransactionFileSeller, TransactionFileBidder, parts[3], float(TransactionFileBid))
+                newLine = '{:<20}{:<16}{:<16}{:<4}{:<7}\n'.format(parts[0],TransactionFileSeller, TransactionFileBidder, parts[3], float(TransactionFileBid))
                 lines[i] = newLine
                 with open(item_file, 'w') as f:
                     f.writelines(lines)
-                print('Bid updated for item {}.'.format(TransactionFileItem))
+                print("BID Succesfull")
                 return
             else:
                 print('Bid amount is not greater than current bid amount for item {}.'.format(TransactionFileItem))

@@ -102,7 +102,8 @@ bool Transaction::createUser(User *user)
     });
 
     // add user data to user accounts file
-    userAccountsFile.appendUserToFile({newUsername, userType, 0.0, newPassword});
+    
+    //userAccountsFile.appendUserToFile({newUsername, userType, 0.0, newPassword});
 
     //print success message to console
     std::cout << "\nYou have successfully created a new User: " << newUsername << "!" << std::endl;
@@ -142,7 +143,7 @@ bool Transaction::deleteUser(User *user)
     }
 
     // delete entered user from user accounts file
-    userAccountsFile.deleteUserFromFile(userToDelete);
+    //userAccountsFile.deleteUserFromFile(userToDelete);
 
     // add transaction to transaction file
     TransactionFile transactionFile;
@@ -217,14 +218,14 @@ bool Transaction::advertise(User *user)
     });
 
     //TO DO: add item info to item file
-    AvailableItemsFile availableItemsFile;
-    availableItemsFile.appendItemToFile(ItemInfo{
-        .itemName=itemName.c_str(),
-        .sellerUsername=user->getUsername().c_str(),
-        .highestBidUser="",
-        .numDaysRemaining=numDaysToAuction,
-        .currentHighestBid=minimumBid,
-    });
+    // AvailableItemsFile availableItemsFile;
+    // availableItemsFile.appendItemToFile(ItemInfo{
+    //     .itemName=itemName.c_str(),
+    //     .sellerUsername=user->getUsername().c_str(),
+    //     .highestBidUser="",
+    //     .numDaysRemaining=numDaysToAuction,
+    //     .currentHighestBid=minimumBid,
+    // });
 
     //print success message
     std::cout << "\nItem has been successfully put up for a bid!" << std::endl;
@@ -301,15 +302,15 @@ bool Transaction::bid(User *user)
         .newBId=newBid,
     });
 
-    // update item in items file
-    availableItemsFile.deleteItemFromFile(*item);
-    availableItemsFile.appendItemToFile(ItemInfo{
-        .itemName=itemName.c_str(),
-        .sellerUsername=sellerName.c_str(),
-        .highestBidUser=user->getUsername().c_str(),
-        .numDaysRemaining=numDaysToAuction,
-        .currentHighestBid=newBid,
-    });
+    // // update item in items file
+    // availableItemsFile.deleteItemFromFile(*item);
+    // availableItemsFile.appendItemToFile(ItemInfo{
+    //     .itemName=itemName.c_str(),
+    //     .sellerUsername=sellerName.c_str(),
+    //     .highestBidUser=user->getUsername().c_str(),
+    //     .numDaysRemaining=numDaysToAuction,
+    //     .currentHighestBid=newBid,
+    // });
 
     //print success message
     std::cout << "A bid has been successfully made for this item!" << std::endl;
@@ -364,10 +365,11 @@ bool Transaction::refund(User *user)
     buyerInfo->availableCredit += creditToTransfer;
 
     // update the credit amounts for the seller and the buyer in the user accounts file
-    userAccountsFile.deleteUserFromFile(sellerInfo->username);
-    userAccountsFile.deleteUserFromFile(buyerInfo->username);
-    userAccountsFile.appendUserToFile(*sellerInfo);
-    userAccountsFile.appendUserToFile(*buyerInfo);
+    
+    // userAccountsFile.deleteUserFromFile(sellerInfo->username);
+    // userAccountsFile.deleteUserFromFile(buyerInfo->username);
+    // userAccountsFile.appendUserToFile(*sellerInfo);
+    // userAccountsFile.appendUserToFile(*buyerInfo);
 
     //TO DO: write transaction to transaction file
     TransactionFile transactionFile;
@@ -438,16 +440,16 @@ bool Transaction::addcredit(User *user)
     }
 
     // add credit amount to specified user's account
-    userInfo->availableCredit += creditAmountToAdd;
-    userAccountsFile.deleteUserFromFile(userInfo->username);
-    userAccountsFile.appendUserToFile(*userInfo);
+    // userInfo->availableCredit += creditAmountToAdd;
+    // userAccountsFile.deleteUserFromFile(userInfo->username);
+    // userAccountsFile.appendUserToFile(*userInfo);
 
     TransactionFile transactionFile;
     transactionFile.appendToFile({
         .username=userToAddCreditTo.c_str(),
         .transactionCode=TransactionCode::ADDCREDIT,
         .userType=userInfo->userType,
-        .availableCredit=userInfo->availableCredit,
+        .availableCredit=creditAmountToAdd,
     });
 
     //print success message
