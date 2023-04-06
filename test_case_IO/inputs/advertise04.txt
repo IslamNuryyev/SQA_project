@@ -1,7 +1,0 @@
-login
-islam4
-advertise
-itemname3
-15.00
-30
-logout

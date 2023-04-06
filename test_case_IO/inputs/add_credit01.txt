@@ -1,6 +1,0 @@
-login
-islam
-addcredit
-bhargav
-123
-logout

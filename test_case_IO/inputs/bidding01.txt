@@ -1,6 +1,0 @@
-login
-owais
-bid
-watch
-500
-logout

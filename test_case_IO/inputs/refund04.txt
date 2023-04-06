@@ -1,6 +1,0 @@
-login
-islam
-refund
-islam3
-noSllerusername
-logout

@@ -1,5 +1,0 @@
-login
-islam
-delete
-not-existing
-logout

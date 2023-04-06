@@ -1,4 +1,0 @@
-login
-owais
-refund
-logout

@@ -1,5 +1,0 @@
-login
-islam
-refund
-nonuser
-logout

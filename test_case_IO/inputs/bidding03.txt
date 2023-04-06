@@ -1,4 +1,0 @@
-login
-islam4
-bid
-logout

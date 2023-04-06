@@ -1,5 +1,0 @@
-login
-bhargav
-addcredit
-20000
-logout

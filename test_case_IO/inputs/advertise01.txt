@@ -1,5 +1,0 @@
-login
-islam
-advertise
-itemnameisover19characters
-logout
