@@ -1,0 +1,3 @@
+vicks user01 user03 10 56
+fan user01 N/A 75 75
+lotion user01 user03 5 5
