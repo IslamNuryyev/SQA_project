@@ -1,0 +1,10 @@
+login
+user01
+pass
+create
+user05
+AA
+pass
+delete
+userDE
+logout

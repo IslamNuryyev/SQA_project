@@ -1,0 +1,10 @@
+login
+user02
+pass
+advertise
+rolex
+20
+34
+addcredit
+40
+logout

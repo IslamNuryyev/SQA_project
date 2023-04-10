@@ -6,6 +6,7 @@ def addCredit(line, file):
     TransactionFileUser = transactionLinePartsArray[1]
     TransactionFileUserType = transactionLinePartsArray[2]
     TransactionFileCredits = transactionLinePartsArray[3]
+    TransactionFilePassword = transactionLinePartsArray[4]
     
 
         # Open the user account file for reading
@@ -24,7 +25,7 @@ def addCredit(line, file):
     if user_line_index >= 0:
         user_info = lines[user_line_index].split()
         new_credit = float(user_info[2]) + float(TransactionFileCredits)
-        lines[user_line_index] = f"{TransactionFileUser:15} {TransactionFileUserType:02} {new_credit:09} password\n"
+        lines[user_line_index] = f"{TransactionFileUser:15} {TransactionFileUserType:02} {new_credit:09} {TransactionFilePassword:10}\n"
         print("ADD CREDIT succesfull")
 
     # If the user doesn't exist, add a new line with their information

@@ -22,6 +22,7 @@ def refund(line,user_account_file):
                     parts[0] = "{:<15}".format(parts[0])
                     new_value_padded = "{:0>9}".format(str(float(parts[2]) - RefCredit))
                     parts[2] = new_value_padded
+                    parts[3] = "teww"
                     lines[i] = " ".join(parts) + "\n"
                 else:
                     print("User ", SelerUserName, " DOES NOT have enough credit for to refund ",RefCredit  )
@@ -47,6 +48,7 @@ def refund(line,user_account_file):
                     parts[0] = "{:<15}".format(parts[0])
                     new_value_padded = "{:0>9}".format(str(float(parts[2]) + RefCredit))
                     parts[2] = new_value_padded
+                    parts[3] = "teww"
                     lines[i] = " ".join(parts) + "\n"
         f.close()
         with open(user_account_file, "w") as f:

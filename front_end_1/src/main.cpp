@@ -8,6 +8,7 @@
 #include <algorithm>
 #include <type_traits>
 #include <typeinfo>
+#include <chrono>
 
 #include <cstdlib>
 #include <ctime>
@@ -24,7 +25,19 @@ using namespace std;
 	Main - Auction System Program
 	@param int argc: The number of arguments passed
 	@param: char** argv: Array of input files (format: current users, available items, daily transaction)
+	
 */
+
+std::string getCurrentTimeAsString() {
+    auto now = std::chrono::system_clock::now();
+    std::time_t current_time = std::chrono::system_clock::to_time_t(now);
+    auto duration_in_ms = std::chrono::duration_cast<std::chrono::milliseconds>(now.time_since_epoch()) % 1000;
+    std::stringstream ss;
+    ss << std::put_time(std::localtime(&current_time), "%Y-%m-%d-%H-%M-%S") << "-" << std::setfill('0') << std::setw(3) << duration_in_ms.count();
+    return ss.str();
+}
+
+
 int main(int argc, char** argv){
 	// Initialize Variables
 	bool auctionOpen = true;	// Whether or not to close (Exit) the auction system
@@ -36,15 +49,20 @@ int main(int argc, char** argv){
 
 	// Initialize Objects
 	string daily_transaction_filename = argv[3];
-	srand(time(nullptr));
-    int random_num = rand() % 1000 + 1;
+	// srand(time(nullptr));
+    // int random_num = rand() % 1000 + 1;
     
     // Construct the new filename
     // string new_daily_transaction_filename = "./transactionFiles/" + "daily_transaction_" + to_string(random_num) + ".txt";
-	std::string new_daily_transaction_filename = "transactionFiles/";
-	new_daily_transaction_filename += "daily_transaction_";
-	new_daily_transaction_filename += std::to_string(random_num);
-	new_daily_transaction_filename += ".txt";
+	// std::string new_daily_transaction_filename = "transactionFiles/";
+	// new_daily_transaction_filename += "daily_transaction_";
+	// new_daily_transaction_filename += std::to_string(random_num);
+	// new_daily_transaction_filename += ".txt";
+
+	// std::string new_daily_transaction_filename = "transactionFiles/daily_transaction_" + std::to_string(rand() % 1000) + ".txt";
+
+	// Example usage
+	std::string new_daily_transaction_filename = "transactionFiles/daily_transaction_" + getCurrentTimeAsString() + ".txt";
 
 
 
@@ -245,8 +263,9 @@ int main(int argc, char** argv){
 											}
 											currentUser.credit -= stof(bidAmount);
 											itemRecord.highestBid = stof(bidAmount);
-											fc.updateCredit(currentUser.username, currentUser.credit);
-											fc.updateItemBid(itemRecord, currentUser.username);
+											itemRecord.buyer = currentUser.username;
+											// fc.updateCredit(currentUser.username, currentUser.credit);
+											// fc.updateItemBid(itemRecord, currentUser.username);
 											printf("Bid of $%.2f successfully placed on %s.\n", stof(bidAmount), itemRecord.itemName.c_str());
 
 											transactionCode = BID_TRANSACTION_CODE;
@@ -307,8 +326,8 @@ int main(int argc, char** argv){
 								buyerRecord.credit += refundRecord.amount;  // Add the refund amount to the buyers account
 								sellerRecord.credit -= refundRecord.amount; // Remove the refund amount from the sellers account
 
-								fc.updateCredit(buyerRecord.username, buyerRecord.credit);   // Update the buyers credit record
-								fc.updateCredit(sellerRecord.username, sellerRecord.credit); // Update the sellers credit record
+								//fc.updateCredit(buyerRecord.username, buyerRecord.credit);   // Update the buyers credit record
+								//fc.updateCredit(sellerRecord.username, sellerRecord.credit); // Update the sellers credit record
 
 								printf("$%.2f refunded from %s to %s\n", refundRecord.amount, refundRecord.seller.c_str(), refundRecord.buyer.c_str());
 								transactionCode = REFUND_TRANSACTION_CODE;

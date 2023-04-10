@@ -2,4 +2,4 @@ user01          AA 000000100 teww
 user02          FS 000000100 teww
 user03          BS 000000100 teww
 user04          SS 000000100 teww 
-userDE          SS 000000100 teww
+userDE          SS 000000100 teww  
