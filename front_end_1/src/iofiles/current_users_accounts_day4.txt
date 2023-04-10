@@ -1,0 +1,5 @@
+user01          AA 000000100 teww
+user02          FS 0014040.0 teww      
+user03          BS 0002725.0 teww
+user04          SS 0009235.0 teww
+user05          AA 000000000 teww      

@@ -7,11 +7,12 @@ AVAIL_ITEMS="iofiles/available_items.txt"
 sessions_dir="scripts/sessions"
 MERGE_FILE_TO_STORE="../iofiles/merged_TransactionFile.txt"
 
-i=1
-
 mkdir -p "session_Output"
 cd "$dir"
-for ((i=1; i<=5; i++))
+
+
+for ((i=1; i<=1; i++)) # FOR RUNNING dailyScript.sh directly
+#for ((i=1; i<=5; i++)) # FOR RUNNING USING weeklyScript.sh
 do
   for session_file in "$sessions_dir"/"day${i}"/*; do
     # Set the output file for this session
@@ -37,11 +38,11 @@ echo "Deleted session transaction files."
 
 
 # # Running backEnd on the merged file
-# cd ../../../
-# cd back_end
-# echo "Running Backend."
-# python3 BackEndV2.py
-# echo "Backend running complete."
+cd ../../../
+cd back_end
+echo "Running Backend."
+python3 BackEndV2.py
+echo "Backend running complete."
 
 # Running backEnd on the merged file
 # cd ../../
