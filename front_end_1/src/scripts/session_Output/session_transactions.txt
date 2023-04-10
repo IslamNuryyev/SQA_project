@@ -1,0 +1,215 @@
+Welcome to AuctionBay!
+--
+Here is a list of operations (what to input):
+- Login (login)
+- Create (create)
+- Delete (delete)
+- Advertise (advertise)
+- Bid (bid)
+- Refund (refund)
+- Add Credit (addcredit)
+- List All Items (listallitems)
+- List All Users (listallusers)
+- Reset Password (resetpassword)
+- Logout (logout)
+
+Enter operation:
+Enter username:
+Enter password:
+Hello user01 (AA)!
+
+Enter operation:
+Enter a username to create:
+Enter a user type:
+Enter a password:
+user05 (AA) successfully created.
+
+Enter operation:
+Enter a username to delete:
+userDE successfully deleted.
+
+Enter operation:
+user01 successfully logged out.
+Welcome to AuctionBay!
+--
+Here is a list of operations (what to input):
+- Login (login)
+- Create (create)
+- Delete (delete)
+- Advertise (advertise)
+- Bid (bid)
+- Refund (refund)
+- Add Credit (addcredit)
+- List All Items (listallitems)
+- List All Users (listallusers)
+- Reset Password (resetpassword)
+- Logout (logout)
+
+Enter operation:
+Enter username:
+Enter password:
+Hello user02 (FS)!
+
+Enter operation:
+Enter the item name:
+Enter the minimum bid ($):
+Enter auction duration (in days):
+rolex successfully put up for auction for 34 days.
+rolex              user02       34 0         
+
+Enter operation:
+Current credit balance for user02: $100.00
+Enter the credit amount to add:
+New credit balance for user02: $140.00
+
+Enter operation:
+user02 successfully logged out.
+Welcome to AuctionBay!
+--
+Here is a list of operations (what to input):
+- Login (login)
+- Create (create)
+- Delete (delete)
+- Advertise (advertise)
+- Bid (bid)
+- Refund (refund)
+- Add Credit (addcredit)
+- List All Items (listallitems)
+- List All Users (listallusers)
+- Reset Password (resetpassword)
+- Logout (logout)
+
+Enter operation:
+Enter username:
+Enter password:
+Hello user03 (BS)!
+
+Enter operation:
+Item Name: 		 Item Seller: 	 Highest Bidder: 	 Highest Bid: 	 Auction Days Left:
+vicks                    user01          user03                  10              10
+fan                      user01          N/A                     75              75
+lotion                   user01          user03                  5               5
+lamp                     user02          50                      70              50
+
+Enter operation:
+Enter item name:
+Enter seller's username:
+Current Highest Bid: $10
+Enter new bid amount:
+Bid of $30.00 successfully placed on vicks.
+vicks              user01       10 30        
+
+Enter operation:
+Current credit balance for user03: $70.00
+Enter the credit amount to add:
+New credit balance for user03: $120.00
+
+Enter operation:
+user03 successfully logged out.
+Welcome to AuctionBay!
+--
+Here is a list of operations (what to input):
+- Login (login)
+- Create (create)
+- Delete (delete)
+- Advertise (advertise)
+- Bid (bid)
+- Refund (refund)
+- Add Credit (addcredit)
+- List All Items (listallitems)
+- List All Users (listallusers)
+- Reset Password (resetpassword)
+- Logout (logout)
+
+Enter operation:
+Enter username:
+Enter password:
+Hello user04 (SS)!
+
+Enter operation:
+Item Name: 		 Item Seller: 	 Highest Bidder: 	 Highest Bid: 	 Auction Days Left:
+vicks                    user01          user03                  10              10
+fan                      user01          N/A                     75              75
+lotion                   user01          user03                  5               5
+lamp                     user02          50                      70              50
+
+Enter operation:
+Enter the item name:
+Error: lamp already exists in available-items file.
+
+Enter operation:
+Enter the item name:
+Enter the minimum bid ($):
+Enter auction duration (in days):
+phone successfully put up for auction for 21 days.
+phone              user04       21 0         
+
+Enter operation:
+Current credit balance for user04: $100.00
+Enter the credit amount to add:
+Error: Invalid input for credit. Enter a number between 1-1000.
+
+Enter operation:
+Current credit balance for user04: $100.00
+Enter the credit amount to add:
+New credit balance for user04: $600.00
+
+Enter operation:
+user04 successfully logged out.
+Welcome to AuctionBay!
+--
+Here is a list of operations (what to input):
+- Login (login)
+- Create (create)
+- Delete (delete)
+- Advertise (advertise)
+- Bid (bid)
+- Refund (refund)
+- Add Credit (addcredit)
+- List All Items (listallitems)
+- List All Users (listallusers)
+- Reset Password (resetpassword)
+- Logout (logout)
+
+Enter operation:
+Enter username:
+Enter password:
+Hello user01 (AA)!
+
+Enter operation:
+Enter a username to create:
+Enter a user type:
+Enter a password:
+testUser (SS) successfully created.
+
+Enter operation:
+Enter a username to delete:
+Error: This username does not exist in the user-accounts file.
+
+Enter operation:
+Enter refund amount:
+Enter buyer's username:
+Enter seller's username:
+$23.00 refunded from user04 to user03
+
+Enter operation:
+Item Name: 		 Item Seller: 	 Highest Bidder: 	 Highest Bid: 	 Auction Days Left:
+vicks                    user01          user03                  10              10
+fan                      user01          N/A                     75              75
+lotion                   user01          user03                  5               5
+lamp                     user02          50                      70              50
+
+Enter operation:
+Enter the item name:
+Enter the minimum bid ($):
+Error: Minimum bid amount must be betwceen 0-999.99.
+
+Enter operation:
+Enter the item name:
+Enter the minimum bid ($):
+Enter auction duration (in days):
+boat successfully put up for auction for 21 days.
+boat               user01       21 0         
+
+Enter operation:
+user01 successfully logged out.
