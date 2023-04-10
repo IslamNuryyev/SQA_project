@@ -71,8 +71,8 @@ struct USER_RECORD {
 inline std::string recordToString(ITEM_RECORD itemRecord){
     std::stringstream itemStream;
 	// itemStream << itemRecord.itemName << " " << itemRecord.seller << " " << itemRecord.duration << " " << itemRecord.highestBid;
-	//04 lamp               user02       50           50 80   
-	itemStream << std::setw(19) << std::left << itemRecord.itemName << std::setw(13) << std::left << itemRecord.seller << std::setw(13) << std::left << itemRecord.buyer << std::setw(3) << std::left << itemRecord.duration << std::setw(10) << std::left << itemRecord.highestBid;
+	//03 car                user01       N/A          32 23 
+	itemStream << std::setw(19) << std::left << itemRecord.itemName << std::setw(13) << std::left << itemRecord.seller << std::setw(13) << std::left << itemRecord.buyer << std::setw(4) << std::left << itemRecord.duration<< " " << std::setw(10) << std::left << itemRecord.highestBid;
     std::cout << itemStream.str() << std::endl;
 	std::string itemInfo = itemStream.str();
 	return itemInfo;

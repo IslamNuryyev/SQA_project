@@ -1,0 +1,4 @@
+--- ./../testcases/outputs/expected/addcredit/addcredit09/addcredit09_daily_transaction.txt	2023-04-10 17:22:30.250325900 -0400
++++ ./../testcases/outputs/actual/addcredit/addcredit09/addcredit09_daily_transaction.txt	2023-04-10 17:23:08.219556700 -0400
+@@ -1 +0,0 @@
+-06 user02 FS 110 teww

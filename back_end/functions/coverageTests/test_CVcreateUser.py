@@ -29,8 +29,8 @@ from back_end.functions.createUser import createUser
 class TestCreateUser(unittest.TestCase):
     def setUp(self):
         self.user_account_file = tempfile.NamedTemporaryFile(mode="w", delete=False)
-        self.user_account_file.write("user1           AA 000000100\n")
-        self.user_account_file.write("user2           SS 000000200\n")
+        self.user_account_file.write("user1           AA 000000100 teww\n")
+        self.user_account_file.write("user2           SS 000000200 teww\n")
         self.user_account_file.close()
 
     def tearDown(self):
@@ -38,19 +38,19 @@ class TestCreateUser(unittest.TestCase):
 
     def test_createUser_success(self):
         # Call the function with a new username and user type
-        createUser("01 user3           BB 0\n", self.user_account_file.name)
+        createUser("01 user3           BB 0 teww\n", self.user_account_file.name)
 
         # Read the user account file to check if the user was added successfully
         with open(self.user_account_file.name, 'r') as f:
             lines = f.readlines()
 
         # Check that the user was added successfully
-        self.assertEqual(lines[2].strip(), "user3           BB 000000000")
+        self.assertEqual(lines[2].strip(), "user3           BB 000000000 teww")
 
 
     def test_createUser_already_exists(self):
         # Call the function with an existing username
-        createUser("01 user2           BB 0\n", self.user_account_file.name)
+        createUser("01 user2           BB 0 teww\n", self.user_account_file.name)
 
         # Check that the function prints an error message
         self.assertLogs(level="INFO")

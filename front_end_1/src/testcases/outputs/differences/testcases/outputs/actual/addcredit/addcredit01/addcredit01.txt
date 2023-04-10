@@ -1,0 +1,53 @@
+--- ./../testcases/outputs/expected/addcredit/addcredit01/addcredit01.txt	2023-04-10 17:22:28.938133900 -0400
++++ ./../testcases/outputs/actual/addcredit/addcredit01/addcredit01.txt	2023-04-10 17:23:04.309382600 -0400
+@@ -1,25 +1,25 @@
+-Welcome to AuctionBay!
+---
+-Here is a list of operations (what to input):
+-- Login (login)
+-- Create (create)
+-- Delete (delete)
+-- Advertise (advertise)
+-- Bid (bid)
+-- Refund (refund)
+-- Add Credit (addcredit)
+-- List All Items (listallitems)
+-- List All Users (listallusers)
+-- Reset Password (resetpassword)
+-- Logout (logout)
+-
+-Enter operation:
+-Error: You must login first.
+-
+-Enter operation:
+-Enter username:
+-Enter password:
+-Hello user01 (AA)!
+-
+-Enter operation:
+-user01 successfully logged out.
++Welcome to AuctionBay!
++--
++Here is a list of operations (what to input):
++- Login (login)
++- Create (create)
++- Delete (delete)
++- Advertise (advertise)
++- Bid (bid)
++- Refund (refund)
++- Add Credit (addcredit)
++- List All Items (listallitems)
++- List All Users (listallusers)
++- Reset Password (resetpassword)
++- Logout (logout)
++
++Enter operation:
++Error: You must login first.
++
++Enter operation:
++Enter username:
++Enter password:
++Hello user01 (AA)!
++
++Enter operation:
++user01 successfully logged out.

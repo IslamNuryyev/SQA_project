@@ -1,4 +1,0 @@
-04 newitem             islam           islam           0245.7
-05 islam3          islam4          000005000
-06 bhargav         FS 000000123
-00

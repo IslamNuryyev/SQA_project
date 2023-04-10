@@ -7,11 +7,11 @@ cp ../iofiles/available_items.txt ../iofiles/available_items_day1.txt
 # Run the Daily script for five days
 for i in {1..5}
 do
-    # Run the Daily script for the current day
+    # Running the Daily script for the current day
     echo "Running Daily script for Day $i..."
     ./dailyScript.sh iofiles/current_users_accounts_day$i.txt ../iofiles/available_items_day$i.txt ../iofiles/daily_transactions_day$i.txt
 
-    # Merge the daily transactions into a weekly transaction file
+    # Merging the daily transactions into a weekly transaction file
     echo "Merging daily transactions into a weekly transaction file..."
     cat ../iofiles/merged_TransactionFile.txt >> ../iofiles/weekly_transactions.txt
 

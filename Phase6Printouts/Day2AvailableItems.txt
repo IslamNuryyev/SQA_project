@@ -2,7 +2,5 @@ vicks               user01          NONE             9  30.0
 fan                 user01          NONE            74  75
 lotion              user01          user03           4  10
 lamp                user02          NONE            49  70.0  
-rolex               user02          NONE            33  0      
-phone               user04          NONE            20  0      
-boat                user01          NONE            20  0      
+rolex               user02          NONE            33  0                 
 laptop              user01          NONE            12  0
