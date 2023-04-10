@@ -1,7 +1,7 @@
-vicks               user01          10               6  30.0   
-fan                 user01          N/A             71  75
+vicks               user01          NONE             6  30.0   
+fan                 user01          NONE            71  75
 lotion              user01          user03           1  10
-lamp                user02          50              46  70.0  
+lamp                user02          NONE            46  70.0  
 rolex               user02          user01          30  0      
 phone               user04          user24          17  100      
 boat                user01          NONE            17  0      
