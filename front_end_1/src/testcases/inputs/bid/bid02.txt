@@ -1,5 +1,0 @@
-bid
-login
-user01
-pass
-logout

@@ -41,7 +41,7 @@ int main(int argc, char** argv){
     
     // Construct the new filename
     // string new_daily_transaction_filename = "./transactionFiles/" + "daily_transaction_" + to_string(random_num) + ".txt";
-	std::string new_daily_transaction_filename = "./transactionFiles/";
+	std::string new_daily_transaction_filename;
 	new_daily_transaction_filename += "daily_transaction_";
 	new_daily_transaction_filename += std::to_string(random_num);
 	new_daily_transaction_filename += ".txt";

@@ -1,8 +1,0 @@
-login
-user04
-pass
-advertise
-wallet
-100
-101
-logout

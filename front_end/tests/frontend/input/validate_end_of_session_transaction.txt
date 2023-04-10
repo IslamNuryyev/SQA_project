@@ -1,6 +1,0 @@
-login
-testFSUser
-password
-addcredit
-200
-logout

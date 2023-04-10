@@ -1,8 +1,0 @@
-login
-testFSUser
-password
-bid
-itemToBid
-sellerUserTest
-720
-logout

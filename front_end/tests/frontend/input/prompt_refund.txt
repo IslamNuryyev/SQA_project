@@ -1,8 +1,0 @@
-login
-testAAUser
-password
-refund
-testingBuyer
-testingSeller
-10
-logout

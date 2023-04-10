@@ -1,8 +1,0 @@
-login
-user02
-pass
-bid
-lamp
-user02
-60
-logout

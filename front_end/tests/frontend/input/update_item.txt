@@ -1,8 +1,0 @@
-login
-testBSUser
-password
-bid
-itemToBidOn
-sellerUserTest
-45
-logout

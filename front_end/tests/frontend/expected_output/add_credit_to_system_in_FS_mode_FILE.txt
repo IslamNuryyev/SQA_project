@@ -1,2 +1,0 @@
-06 testFSUser      FS 000100.00
-00 testFSUser      FS 000000.00

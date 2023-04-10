@@ -1,6 +1,0 @@
-login
-user01
-pass
-create
-user02
-logout

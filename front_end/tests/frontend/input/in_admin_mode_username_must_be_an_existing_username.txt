@@ -1,8 +1,0 @@
-login
-testAAUser
-password
-addcredit
-fakeUser
-testBSUser
-10
-logout

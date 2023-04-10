@@ -1,5 +1,0 @@
-testSSUser      SS 0000049.0 password
-testFSUser      FS 0011466.0 password
-testingNEWUser  AA 000000.00 password
-testBSUser      BS 0004468.0 password
-testAAUser      AA 000100.00 password

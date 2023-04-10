@@ -1,6 +1,0 @@
-login
-user03
-pass
-addcredit
-1001
-logout

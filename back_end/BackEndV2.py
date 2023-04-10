@@ -12,16 +12,19 @@ def fetchTransactionCode(transactionLine):
     return transactionLine[:2]
 
 def main(): 
-    user_account_file = os.path.join("front_end", "src", "UserAccountsFile.txt")
-    #user_account_file = "front_end/src/UserAccountsFile.txt"
+    #user_account_file = os.path.join("front_end", "src", "UserAccountsFile.txt")
+    #file_path = os.path.join(os.path.expanduser('~'), "Favorites", "SQA_project", "front_end", "src", "UserAccountsFile.txt")
+    parent_dir = os.path.dirname(os.path.abspath(__file__))
+    # user_account_file = r"C:\Users\Bhargav\Favorites\SQA_project\front_end\src\UserAccountsFile.txt"
+    user_account_file = os.path.join(parent_dir, "..", "front_end", "src", "UserAccountsFile.txt")
 
-   # item_file = os.path.join("front_end\src\AvailableItemsFile.txt")
-    item_file = os.path.join("front_end", "src", "AvailableItemsFile.txt")
+    item_file = os.path.join(parent_dir, "..", "front_end", "src", "AvailableItemsFile.txt")
+    #item_file = os.path.join("front_end", "src", "AvailableItemsFile.txt")
 
     transactionCode = ""
 
-    #transactonFile = "front_end/src/DailyTransactionFile.txt"
-    transactonFile = os.path.join("front_end", "src", "DailyTransactionFile.txt")
+    #transactonFile = "front_end/src/DailyTransactionFile.txt" front_end\src\merged_file.txt
+    transactonFile = os.path.join(parent_dir, "..", "front_end", "src", "merged_file.txt")
     
 
     #transactonFile = os.path.join("SQA_project", "front_end", "src","DailyTransactionFile.txt")

@@ -1,7 +1,0 @@
-login
-user04
-pass
-advertise
-wallet
-ten
-logout

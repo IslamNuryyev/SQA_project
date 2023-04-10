@@ -1,8 +1,0 @@
-login
-user03
-pass
-bid
-fan
-user01
-90
-logout

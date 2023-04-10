@@ -1,8 +1,0 @@
-login
-testFSUser
-password
-advertise
-itemForBid2
-47
-12
-logout

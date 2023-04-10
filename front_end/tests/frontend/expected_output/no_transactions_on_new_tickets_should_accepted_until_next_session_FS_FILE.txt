@@ -1,2 +1,0 @@
-03 itemForBid6         testFSUser      004 005.00
-00 testFSUser      FS 000000.00

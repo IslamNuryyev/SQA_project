@@ -1,7 +1,0 @@
-login
-user02
-pass
-advertise
-wallet
-1000
-logout

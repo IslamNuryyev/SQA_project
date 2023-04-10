@@ -1,8 +1,0 @@
-login
-testSSUser
-password
-advertise
-itemToBid
-200
-5
-logout

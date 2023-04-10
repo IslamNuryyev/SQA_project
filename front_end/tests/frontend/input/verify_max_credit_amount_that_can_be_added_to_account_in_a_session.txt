@@ -1,8 +1,0 @@
-login
-testAAUser
-password
-addcredit
-testAAUser
-1500
-720
-logout

@@ -1,8 +1,0 @@
-login
-testSSUser
-password
-advertise
-exampleItem
-24
-2
-logout

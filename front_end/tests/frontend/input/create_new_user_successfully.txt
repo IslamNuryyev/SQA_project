@@ -1,8 +1,0 @@
-login
-testAAUser
-password
-create
-testUser
-AA
-password
-logout

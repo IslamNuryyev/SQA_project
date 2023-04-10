@@ -1,7 +1,0 @@
-login
-user02
-wrongpass
-login
-user02
-pass
-logout

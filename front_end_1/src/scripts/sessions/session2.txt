@@ -1,0 +1,8 @@
+login
+user01
+pass
+create
+user06
+AA
+pass
+logout

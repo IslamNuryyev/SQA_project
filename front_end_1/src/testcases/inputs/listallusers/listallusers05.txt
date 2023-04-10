@@ -1,5 +1,0 @@
-login
-user01
-pass
-listallusers
-logout

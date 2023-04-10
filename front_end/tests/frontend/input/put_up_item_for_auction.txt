@@ -1,8 +1,0 @@
-login
-testAAUser
-password
-advertise
-itemForBid
-52
-14
-logout
