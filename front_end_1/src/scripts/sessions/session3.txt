@@ -1,0 +1,8 @@
+login
+user02
+pass
+advertise
+mouse
+50
+75
+logout

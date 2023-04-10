@@ -1,0 +1,8 @@
+login
+user02
+pass
+bid
+vicks
+user01
+15
+logout
