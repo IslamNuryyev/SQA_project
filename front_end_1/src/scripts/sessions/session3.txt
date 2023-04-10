@@ -1,8 +1,11 @@
 login
-user02
+user03
 pass
-advertise
-mouse
+listallitems
+bid
+vicks
+user01
+30
+addcredit
 50
-75
 logout

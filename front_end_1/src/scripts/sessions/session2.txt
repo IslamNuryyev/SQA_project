@@ -1,8 +1,10 @@
 login
-user01
+user02
 pass
-create
-user06
-AA
-pass
+advertise
+rolex
+20
+34
+addcredit
+40
 logout

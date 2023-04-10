@@ -5,4 +5,6 @@ create
 user05
 AA
 pass
+delete
+userDE
 logout

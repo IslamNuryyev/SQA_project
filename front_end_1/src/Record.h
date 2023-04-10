@@ -3,6 +3,9 @@
 
 #include <string>
 #include <sstream>
+#include <iomanip>
+#include <iostream>
+
 
 /* CONSTANTS DECLARATIONS */
 // Account Types
@@ -52,11 +55,15 @@ struct USER_RECORD {
 	std::string password;
 };
 
+
+
 /* RECORD FUNCTIONS */
 // Puts a record (item record) into a string
 inline std::string recordToString(ITEM_RECORD itemRecord){
     std::stringstream itemStream;
-	itemStream << itemRecord.itemName << " " << itemRecord.seller << " " << itemRecord.duration << " " << itemRecord.highestBid;
+	// itemStream << itemRecord.itemName << " " << itemRecord.seller << " " << itemRecord.duration << " " << itemRecord.highestBid;
+	itemStream << std::setw(19) << std::left << itemRecord.itemName << std::setw(13) << std::left << itemRecord.seller << std::setw(3) << std::left << itemRecord.duration << std::setw(10) << std::left << itemRecord.highestBid;
+    std::cout << itemStream.str() << std::endl;
 	std::string itemInfo = itemStream.str();
 	return itemInfo;
 }
@@ -64,7 +71,9 @@ inline std::string recordToString(ITEM_RECORD itemRecord){
 // Overloads the recordToString function to accept a refund record
 inline std::string recordToString(REFUND_RECORD refundRecord){
     std::stringstream refundStream;
-	refundStream << refundRecord.buyer << " " << refundRecord.seller << " " << refundRecord.amount;
+	// refundStream << refundRecord.buyer << " " << refundRecord.seller << " " << refundRecord.amount;
+	refundStream << std::setw(15) << std::left << refundRecord.buyer << std::setw(15) << std::left << refundRecord.seller << std::setw(9) << std::left << refundRecord.amount;
+
 	std::string refundInfo = refundStream.str();
 	return refundInfo;
 }
@@ -72,7 +81,12 @@ inline std::string recordToString(REFUND_RECORD refundRecord){
 // Overloads the recordToString function to accept a user record
 inline std::string recordToString(USER_RECORD userRecord){
     std::stringstream userStream;
-	userStream << userRecord.username << " " << userRecord.accountType << " " << userRecord.credit << " " << userRecord.password;
+	// userStream << userRecord.username << " " << userRecord.accountType << " " << userRecord.credit << " " << userRecord.password;
+	// 01 dsdd           FS000000teww00000000000
+	// userStream << std::setw(15) << std::left << userRecord.username << std::setw(2) << std::left << userRecord.accountType << std::setfill('0') << std::setw(6) << userRecord.credit << std::setw(15) << std::left << userRecord.password;
+	// userStream << std::setw(15) << std::left << userRecord.username << " "  << userRecord.accountType << " "<< std::setfill('0') << std::setw(6) << userRecord.credit << " "<< std::setw(15) << std::left << userRecord.password;
+	userStream << std::setw(15) << std::left << userRecord.username << " " << std::setw(2) << std::left << userRecord.accountType << " " << std::setw(6) << std::left << userRecord.credit << std::setw(10) << std::left << userRecord.password;
+
 	std::string userInfo = userStream.str();
 	return userInfo;
 }

@@ -41,7 +41,7 @@ int main(int argc, char** argv){
     
     // Construct the new filename
     // string new_daily_transaction_filename = "./transactionFiles/" + "daily_transaction_" + to_string(random_num) + ".txt";
-	std::string new_daily_transaction_filename;
+	std::string new_daily_transaction_filename = "transactionFiles/";
 	new_daily_transaction_filename += "daily_transaction_";
 	new_daily_transaction_filename += std::to_string(random_num);
 	new_daily_transaction_filename += ".txt";
@@ -350,6 +350,7 @@ int main(int argc, char** argv){
 
 								transactionCode = ADDCREDIT_TRANSACTION_CODE;
 								transactionDetails = currentUser.toString();
+								transactionDetails = recordToString(userRecord);
 								printf("New credit balance for %s: $%.2f\n", username.c_str(), newCredit);
 							} else {
 								if ((userRecord.credit + stof(amount)) < MAX_CREDIT) {
@@ -358,8 +359,9 @@ int main(int argc, char** argv){
 									fc.updateCredit(username, newCredit); // Update users credit in the current users file
 
 									transactionCode = ADDCREDIT_TRANSACTION_CODE;
-									transactionDetails = currentUser.toString();
+									transactionDetails = recordToString(userRecord);
 									printf("New credit balance for %s: $%.2f\n", username.c_str(), newCredit);
+									
 								} else {
 									std::printf("Error: Exceeded $%i credit limit for this user.\n", MAX_CREDIT);
 								}
