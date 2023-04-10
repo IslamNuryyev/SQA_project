@@ -1,0 +1,10 @@
+login
+user02
+pass
+bid
+lotion
+user01
+10
+resetpassword
+pass
+logout

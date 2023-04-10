@@ -1,0 +1,15 @@
+login
+user04
+pass
+listallitems
+advertise
+lamp
+advertise
+phone
+40
+21
+addcredit
+100000000000
+addcredit
+500
+logout

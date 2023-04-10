@@ -1,0 +1,9 @@
+login
+user01
+pass
+advertise
+laptop
+400
+12
+listallitems
+logout

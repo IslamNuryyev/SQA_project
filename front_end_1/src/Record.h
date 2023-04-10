@@ -42,6 +42,15 @@ struct ITEM_RECORD {
     int duration = 1;
 };
 
+// struct BID_RECORD {
+// 	std::string itemName;
+//     std::string seller;
+// 	std::string buyer;
+// 	float highestBid = 0;
+// 	float minBid = 0;
+//     int duration = 1;
+// };
+
 struct REFUND_RECORD {
 	std::string buyer;
 	std::string seller;
@@ -62,7 +71,8 @@ struct USER_RECORD {
 inline std::string recordToString(ITEM_RECORD itemRecord){
     std::stringstream itemStream;
 	// itemStream << itemRecord.itemName << " " << itemRecord.seller << " " << itemRecord.duration << " " << itemRecord.highestBid;
-	itemStream << std::setw(19) << std::left << itemRecord.itemName << std::setw(13) << std::left << itemRecord.seller << std::setw(3) << std::left << itemRecord.duration << std::setw(10) << std::left << itemRecord.highestBid;
+	//04 lamp               user02       50           50 80   
+	itemStream << std::setw(19) << std::left << itemRecord.itemName << std::setw(13) << std::left << itemRecord.seller << std::setw(13) << std::left << itemRecord.buyer << std::setw(3) << std::left << itemRecord.duration << std::setw(10) << std::left << itemRecord.highestBid;
     std::cout << itemStream.str() << std::endl;
 	std::string itemInfo = itemStream.str();
 	return itemInfo;

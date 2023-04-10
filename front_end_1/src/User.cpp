@@ -69,7 +69,7 @@ ITEM_RECORD User::Advertise() {
 			std::printf("Error: Minimum bid amount must be betwceen 0-999.99.\n");
 			return itemRecord;
 		} else {
-			itemRecord.minBid = std::stoi(minBid);
+			itemRecord.highestBid = std::stoi(minBid);
 		}
 	}
 	

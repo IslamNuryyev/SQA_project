@@ -1,0 +1,10 @@
+login
+user01
+pass
+listallusers
+listallitems
+refund
+100
+user01
+user03
+logout

@@ -1,0 +1,14 @@
+login
+user03
+pass
+addcredit
+70
+bid
+laptop
+user01
+615
+bid
+fan
+user01
+130
+logout

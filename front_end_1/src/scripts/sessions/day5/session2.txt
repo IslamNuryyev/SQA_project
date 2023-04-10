@@ -1,0 +1,14 @@
+login
+user24
+pass
+addcredit
+120
+bid
+phone
+user04
+100
+advertise
+mouse
+56
+17
+logout

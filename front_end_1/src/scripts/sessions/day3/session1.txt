@@ -1,0 +1,11 @@
+login
+user01
+pass
+listallitems
+addcredit
+100
+user01
+bid
+vicks
+user01
+logout

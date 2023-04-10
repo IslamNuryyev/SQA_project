@@ -1,0 +1,13 @@
+login
+user02
+pass
+resetpassword
+pass
+advertise
+TV
+250
+20
+bid
+lamp
+user02
+logout

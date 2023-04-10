@@ -1,0 +1,15 @@
+login
+user01
+pass
+bid
+rolex
+user02
+30
+create
+user24
+FS
+pass
+bid
+boat
+user01
+logout
