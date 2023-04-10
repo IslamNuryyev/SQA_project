@@ -28,7 +28,7 @@ class TestBid(unittest.TestCase):
             lines = f.readlines()
 
         # Check that the bid was added successfully
-        self.assertEqual(lines[0].strip(), "item1               seller1         bidder1        040 150.0")
+        self.assertEqual(lines[0].strip(), "item1               seller1         bidder1         040 150.0")
     
     def test_bid_not_greater_than_current_bid(self):
         # Call the function with a bid that is not greater than the current bid

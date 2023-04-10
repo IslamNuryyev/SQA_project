@@ -1,0 +1,4 @@
+--- ./../testcases/outputs/expected/addcredit/addcredit05/addcredit05_daily_transaction.txt	2023-04-10 17:22:29.234939000 -0400
++++ ./../testcases/outputs/actual/addcredit/addcredit05/addcredit05_daily_transaction.txt	2023-04-10 17:23:05.927397800 -0400
+@@ -1 +0,0 @@
+-06 user01 AA 110 teww

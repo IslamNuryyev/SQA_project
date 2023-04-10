@@ -1,0 +1,4 @@
+--- ./../testcases/outputs/expected/addcredit/addcredit13/addcredit13_daily_transaction.txt	2023-04-10 17:22:30.562754600 -0400
++++ ./../testcases/outputs/actual/addcredit/addcredit13/addcredit13_daily_transaction.txt	2023-04-10 17:23:09.568499900 -0400
+@@ -1 +0,0 @@
+-06 user03 BS 110 teww

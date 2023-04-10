@@ -1,7 +1,11 @@
-vicks               user01          user03           10 10
-fan                 user01          N/A              75 75
-lotion              user01          user03           5   5
-lamp                user02          N/A              50  70.0   
-rolex               user02          N/A              34  20     
-phone               user04          N/A              21  40     
+vicks               user01          user03           10  10
+fan                 user01          N/A              75  75
+lotion              user01          user03           5   5 
+lamp                user02          N/A              50  50
+ddf                 user01          N/A              12  32     
 boat                user01          N/A              21  100    
+phone               user04          N/A              21  40     
+laptop              user01          N/A              12  400    
+TV                  user02          N/A              20  250    
+keyboard            user01          N/A              100 100    
+mouse               user24          N/A              17  56     

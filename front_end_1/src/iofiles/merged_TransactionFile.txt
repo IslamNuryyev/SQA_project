@@ -1,33 +1,24 @@
-06 user02 FS 1.37981e+07 teww
-04 vicks              user01       user03       10 30        
-06 user03 BS 2.72653e+06 teww
-06 user04 SS 9.5138e+06 teww
+01 user05          AA 0     teww      
+06 user04 SS 1754 teww
 02 testUser        SS 0     teww      
-03 rolex              user02       N/A          34 20        
-06 user02 FS 14080 teww
-06 user03 BS 2775 teww
-06 user04 SS 9735 teww
-01 testUser        SS 0     teww      
 05 user03         user04         23       
-03 boat               user01       N/A          21 100       
-03 rolex              user02       N/A          34 20        
-06 user02 FS 14080 teww
-06 user03 BS 2775 teww
-06 user04 SS 9735 teww
-01 testUser        SS 0     teww      
+03 boat               user01       N/A          21   100       
+06 user04 SS 1754 teww
+02 testUser        SS 0     teww      
 05 user03         user04         23       
-03 boat               user01       N/A          21 100       
-03 rolex              user02       N/A          34 20        
-06 user02 FS 14080 teww
-06 user03 BS 2775 teww
-06 user04 SS 9735 teww
-01 testUser        SS 0     teww      
+03 boat               user01       N/A          21   100       
+03 laptop             user01       N/A          12   400       
+07 user02 FS 100 teww
+06 user03 BS 196 teww
+06 user01          AA 200   teww      
+07 user02 FS 100 teww
+03 TV                 user02       N/A          20   250       
+05 user01         user03         100      
+06 user04 SS 1754 teww
+02 testUser        SS 0     teww      
 05 user03         user04         23       
-03 boat               user01       N/A          21 100       
-03 rolex              user02       N/A          34 20        
-06 user02 FS 14080 teww
-06 user03 BS 2775 teww
-06 user04 SS 9735 teww
-01 testUser        SS 0     teww      
-05 user03         user04         23       
-03 boat               user01       N/A          21 100       
+03 boat               user01       N/A          21   100       
+01 user24          AA 0     teww      
+03 keyboard           user01       N/A          100  100       
+01 user24          FS 0     teww      
+06 user03 BS 216 teww

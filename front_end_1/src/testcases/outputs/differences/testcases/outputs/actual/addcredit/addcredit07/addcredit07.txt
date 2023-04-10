@@ -1,0 +1,57 @@
+--- ./../testcases/outputs/expected/addcredit/addcredit07/addcredit07.txt	2023-04-10 17:22:30.016008400 -0400
++++ ./../testcases/outputs/actual/addcredit/addcredit07/addcredit07.txt	2023-04-10 17:23:07.433434200 -0400
+@@ -1,27 +1,27 @@
+-Welcome to AuctionBay!
+---
+-Here is a list of operations (what to input):
+-- Login (login)
+-- Create (create)
+-- Delete (delete)
+-- Advertise (advertise)
+-- Bid (bid)
+-- Refund (refund)
+-- Add Credit (addcredit)
+-- List All Items (listallitems)
+-- List All Users (listallusers)
+-- Reset Password (resetpassword)
+-- Logout (logout)
+-
+-Enter operation:
+-Enter username:
+-Enter password:
+-Hello user02 (FS)!
+-
+-Enter operation:
+-Current credit balance for user02: $100.00
+-Enter the credit amount to add:
+-Error: Credit amount must be a number.
+-
+-Enter operation:
+-user02 successfully logged out.
++Welcome to AuctionBay!
++--
++Here is a list of operations (what to input):
++- Login (login)
++- Create (create)
++- Delete (delete)
++- Advertise (advertise)
++- Bid (bid)
++- Refund (refund)
++- Add Credit (addcredit)
++- List All Items (listallitems)
++- List All Users (listallusers)
++- Reset Password (resetpassword)
++- Logout (logout)
++
++Enter operation:
++Enter username:
++Enter password:
++Hello user02 (FS)!
++
++Enter operation:
++Current credit balance for user02: $100.00
++Enter the credit amount to add:
++Error: Credit amount must be a number.
++
++Enter operation:
++user02 successfully logged out.
