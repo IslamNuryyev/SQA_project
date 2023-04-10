@@ -7,4 +7,5 @@ AA
 pass
 delete
 userDE
+listallusers
 logout

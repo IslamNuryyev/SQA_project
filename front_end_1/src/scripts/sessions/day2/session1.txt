@@ -1,10 +1,9 @@
 login
 user01
 pass
-create
-user05
-AA
-pass
-delete
-userDE
+advertise
+laptop
+400
+12
+listallitems
 logout

@@ -1,10 +1,13 @@
 login
 user02
 pass
+resetpassword
+pass
 advertise
-rolex
+TV
+250
 20
-34
-addcredit
-40
+bid
+lamp
+user02
 logout
